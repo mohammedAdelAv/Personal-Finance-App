@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  /* primary  */
+  --beige-500: #989088;
+  --beige-100: #f8f4f0;
+  --grey-900: #201f24;
+  --grey-500: #696868;
+  --grey-300: #b3b3b3;
+  --grey-100: #f2f2f2;
+
+  /* Secondary */
+  --green: #277c78;
+  --yellow: #f2cdac;
+  --cyan: #82c9d7;
+  --navy: #626070;
+  --red: #c94736;
+  --purple: #826cbd;
+
+  /* other */
+  --purple: #af81ba;
+  --turquoise: #597c7c;
+  --brown: #93674f;
+  --magenta: #934f6f;
+  --blue: #3f8282;
+  --navy-grey: #97a0ac;
+  --army-green: #7f9161;
+  --gold: #cab361;
+  --orange: #be6c49;
+  --white: #ffffff;
+
+  /* fo */
+  --font-regular: 'Public Sans Regular', sans-serif;
+  --font-bold: 'Public Sans Bold', sans-serif;
+
+  /* text */
+  --text-preset-1: 32px 120% line-height 0px letter-spacing;
+  --text-preset-2: 20px 120% line-height 0px letter-spacing;
+  --text-preset-3: 16px 150% line-height 0px letter-spacing;
+  --text-preset-4: 14px 150% line-height 0px letter-spacing;
+  --text-preset-5: 12px 150% line-height 0px letter-spacing;
+
+  /* spacing */
+  --spacing-500: 40px;
+  --spacing-400: 32px;
+  --spacing-300: 24px;
+  --spacing-250: 20px;
+  --spacing-200: 16px;
+  --spacing-150: 12px;
+  --spacing-100: 8px;
+  --spacing-50: 4px;
+}
