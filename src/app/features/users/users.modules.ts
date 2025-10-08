@@ -1,8 +1,7 @@
-
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-
 import { Routes } from "@angular/router";
+
 import { overview } from './components/overview/overview';
 import { transactions } from './components/transactions/transactions';
 import { budgets } from './components/budgets/budgets';

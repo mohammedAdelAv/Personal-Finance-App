@@ -1,3 +1,412 @@
-h1 {
-    color: blue;
+.Overview {
+  padding-left: var(--spacing-500);
+  padding-right: var(--spacing-500);
+  background-color: var(--beige-100);
+  min-height: 100vh;
+}
+
+.Overview .container-fluid h1 {
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+}
+
+.Overview .container-fluid .row .col-md-4 {
+  width: 21rem;
+  height: 7.4375rem;
+  border-radius: 20px;
+  padding: var(--spacing-300);
+}
+
+.Overview .container-fluid .row .currentBalance {
+  background-color: var(--grey-900);
+}
+
+.Overview .container-fluid .row .currentBalance h4 {
+  color: var(--white);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Overview .container-fluid .row .currentBalance .p {
+  color: var(--white);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Overview .container-fluid .row .share {
+  background-color: var(--white);
+}
+
+.Overview .container-fluid .row .share h4 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Overview .container-fluid .row .share p {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+/* pots */
+
+.row .pots {
+  width: 100%;
+  max-width: 39rem;
+  height: 13rem;
+  border-radius: 20px;
+  padding: var(--spacing-400);
+  background-color: var(--white);
+}
+
+.row .col-md-7 h4,
+.Transactions h4,
+.RecurringBills h4,
+.Budgets h4 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.row .col-md-7 p,
+.Transactions p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.row .col-md-7 .img,
+.Transactions .img {
+  margin-left: 0.5rem;
+}
+
+.row .jar-ligh {
+  width: 15.4rem;
+  height: 6rem;
+  border-radius: 10px;
+  padding: var(--spacing-200);
+  background-color: var(--beige-100);
+}
+
+.row .jar-ligh .img {
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+}
+
+.row .jar-ligh .text h6 {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.row .jar-ligh .text p {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.row .d-flex .row .f {
+  border-left: 4px solid var(--green);
+  height: 2.8rem;
+}
+
+.row .d-flex .row .s {
+  border-left: 4px solid var(--cyan);
+  height: 2.8rem;
+}
+
+.row .d-flex .row .t {
+  border-left: 4px solid var(--yellow);
+  height: 2.8rem;
+}
+
+.row .d-flex .row .h {
+  border-left: 4px solid var(--navy);
+  height: 2.8rem;
+}
+
+.row .d-flex .row .col h4 {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.row .d-flex .row .col p {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+/* End Pots */
+
+/* Budgets */
+
+.Budgets {
+  width: 100%;
+  border-radius: 20px;
+  padding: var(--spacing-400);
+  background-color: var(--white);
+}
+
+.Budgets .canvas {
+  width: 230px;
+  height: 230px;
+  position: relative;
+}
+
+.Budgets .row p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Budgets .row span {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .row .budget-item {
+  margin: auto;
+}
+
+.Budgets .canvas .chartCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.Budgets .canvas .chartCenter h4 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .canvas .chartCenter p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+/* End Budgets */
+
+/* Transactions */
+
+.Transactions {
+  width: 100%;
+  max-width: 39rem;
+  border-radius: 20px;
+  padding: var(--spacing-400);
+  background-color: var(--white);
+}
+
+.Transactions ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.Transactions .details .avatar {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.Transactions .details .name {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  margin: auto;
+}
+
+.Transactions .details .date {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Transactions .details .amount {
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+/* End Transactions */
+
+/* Recurring Bills */
+
+.RecurringBills {
+  width: 100%;
+  height: 19rem;
+  border-radius: 20px;
+  padding: var(--spacing-400);
+  background-color: var(--white);
+}
+
+.RecurringBills .row .d-flex {
+  width: 27rem;
+  background-color: var(--beige-100);
+  margin-bottom: 12px;
+  padding: var(--spacing-200) var(--spacing-250);
+  border-radius: 10px;
+}
+
+.RecurringBills .row p,
+.RecurringBills .row span {
+  margin: auto 0;
+}
+
+.RecurringBills .row p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.RecurringBills .row span {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.RecurringBills .row .d {
+  border-left: 4px solid var(--green);
+}
+
+.RecurringBills .row .g {
+  border-left: 4px solid var(--yellow);
+}
+
+.RecurringBills .row .h {
+  border-left: 4px solid var(--cyan);
+}
+
+/* End Recurring Bills */
+
+/*  */
+
+:host-context(body.collapsed) .Overview .container-fluid .row .col-md-4 {
+  width: 27rem;
+}
+
+:host-context(body.collapsed) .row .pots {
+  width: 100%;
+  max-width: 47rem;
+}
+
+:host-context(body.collapsed) .row .jar-ligh {
+  width: 21rem;
+  margin-right: 6rem;
+}
+
+:host-context(body.collapsed) .Budgets .canvas {
+  margin-right: 3rem;
+  margin-left: 2.5rem;
+}
+
+:host-context(body.collapsed) .Transactions {
+  width: 100%;
+  max-width: 47rem;
+}
+
+:host-context(body.collapsed) .RecurringBills .row .d-flex {
+  width: 32rem;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .Overview .container-fluid .row .col-md-4 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablet  */
+
+@media (max-width: 900px) {
+  .Overview .container-fluid .row .col-md-4 {
+    width: 14rem;
+  }
+
+  /* Pots */
+
+  .row .pots {
+    width: 100%;
+    max-width: none;
+  }
+
+  .row .jar-ligh {
+    width: 16rem;
+    margin-right: 2rem;
+  }
+
+  /* End Pots */
+
+  /* Transactions */
+
+  .Transactions {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* End Transactions */
+
+  /* Budgets */
+
+  .Budgets .canvas {
+    margin-right: 5rem;
+    margin-left: 10rem;
+  }
+
+  /* End Budgets */
+
+  /* RecurringBills */
+
+  .RecurringBills .row .d-flex {
+    width: 100%;
+  }
+
+  /* End RecurringBills */
 }

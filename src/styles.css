@@ -29,15 +29,30 @@
   --white: #ffffff;
 
   /* fo */
-  --font-regular: 'Public Sans Regular', sans-serif;
-  --font-bold: 'Public Sans Bold', sans-serif;
+  --font-family: 'Public Sans', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
-  /* text */
-  --text-preset-1: 32px 120% line-height 0px letter-spacing;
-  --text-preset-2: 20px 120% line-height 0px letter-spacing;
-  --text-preset-3: 16px 150% line-height 0px letter-spacing;
-  --text-preset-4: 14px 150% line-height 0px letter-spacing;
-  --text-preset-5: 12px 150% line-height 0px letter-spacing;
+  /* Text Presets */
+  --text-preset-1-font-size: 32px;
+  --text-preset-1-line-height: 120%;
+  --text-preset-1-letter-spacing: 0px;
+
+  --text-preset-2-font-size: 20px;
+  --text-preset-2-line-height: 120%;
+  --text-preset-2-letter-spacing: 0px;
+
+  --text-preset-3-font-size: 16px;
+  --text-preset-3-line-height: 150%;
+  --text-preset-3-letter-spacing: 0px;
+
+  --text-preset-4-font-size: 14px;
+  --text-preset-4-line-height: 150%;
+  --text-preset-4-letter-spacing: 0px;
+
+  --text-preset-5-font-size: 12px;
+  --text-preset-5-line-height: 150%;
+  --text-preset-5-letter-spacing: 0px;
 
   /* spacing */
   --spacing-500: 40px;
@@ -48,4 +63,10 @@
   --spacing-150: 12px;
   --spacing-100: 8px;
   --spacing-50: 4px;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
 }

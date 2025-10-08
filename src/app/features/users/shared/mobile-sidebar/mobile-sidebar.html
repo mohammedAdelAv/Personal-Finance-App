@@ -1,8 +1,7 @@
 <div class="sidebar">
   <div class="container-fluid">
-    <img class="logo" [src] = " isMenuMinimized ? './assets/images/logo-small.svg' : './assets/images/Logo.svg'" alt="Logo" />
 
-    <ul class="nav d-flex flex-column gap-2">
+    <ul class="nav d-flex justify-content-around ">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/users/overview">
           <img src="./assets/images/icon-nav-overview.svg" alt="home" />
@@ -31,15 +30,6 @@
         <a class="nav-link active" routerLink="/users/recurringBills">
           <img src="./assets/images/icon-nav-recurring-bills.svg" alt="bill" />
           <span>Recurring Bills</span>
-        </a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link min " (click)="toggleMenu()">
-          <img
-            [src] = "isMenuMinimized ? './assets/images/Vector.svg' : './assets/images/icon-minimize-menu.svg'"
-            alt="Minimize arow"
-            class="minimize-icon"
-          /><span>Minimize Menu</span>
         </a>
       </li>
     </ul>

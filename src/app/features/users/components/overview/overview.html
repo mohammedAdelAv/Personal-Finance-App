@@ -1,1 +1,172 @@
-<h1>Hello from Overview</h1>
+<div class="Overview">
+  <div class="container-fluid py-5">
+    <div class="pb-4">
+      <h1>Overview</h1>
+    </div>
+
+    <div class="row showData d-flex justify-content-between" *ngIf="balance; else loading">
+      <div class="col-md-4 col-12 currentBalance">
+        <h4>Current Balance</h4>
+        <p class="p">${{ balance.current | number : '1.2-2' }}</p>
+      </div>
+
+      <div class="col-md-4 col-12 income share">
+        <h4>Income</h4>
+        <p>${{ balance.income | number : '1.2-2'}}</p>
+      </div>
+
+      <div class="col-md-4 col-12 expenses share">
+        <h4>Expenses</h4>
+        <p>${{ balance.expenses | number : '1.2-2'}}</p>
+      </div>
+    </div>
+    <!-- لو لسه بيحمل -->
+    <ng-template #loading>
+      <p>Loading balance...</p>
+    </ng-template>
+
+    <div class="row">
+      <div class="col-lg-7 col-12  g-0">
+        <div class="mt-3 pots">
+          <div class="d-flex justify-content-between mb-3">
+            <h4>pots</h4>
+            <p>
+              See Details
+              <img class="img" src="./assets/images/icon-caret-right.svg" alt="caret" />
+            </p>
+          </div>
+
+          <div class="d-flex">
+            <div class="jar-ligh d-flex">
+              <img class="me-3 img" src="./assets/images/ph_tip-jar-light.svg" alt="jar" />
+              <div class="text">
+                <h6>Total Saved</h6>
+                <p>$850</p>
+              </div>
+            </div>
+
+            <div class="row row-cols-2 ms-3" *ngIf="pots && pots.length > 0; else noPots">
+              <div class="col f">
+                <h4>{{ pots[0].name }}</h4>
+                <p>${{ pots[0].total | number : '1.2-2' }}</p>
+              </div>
+              <div class="col s">
+                <h4>{{ pots[1].name }}</h4>
+                <p>${{ pots[1].total | number : '1.2-2' }}</p>
+              </div>
+              <div class="col t">
+                <h4>{{ pots[2].name }}</h4>
+                <p>${{ pots[2].total | number : '1.2-2' }}</p>
+              </div>
+              <div class="col h">
+                <h4>{{ pots[3].name }}</h4>
+                <p>${{ pots[3].total | number : '1.2-2' }}</p>
+              </div>
+            </div>
+
+            <ng-template #noPots>
+              <p>No pots found.</p>
+            </ng-template>
+          </div>
+        </div>
+
+        <div class="mt-3 Transactions">
+          <div class="d-flex justify-content-between mb-3">
+            <h4>Transactions</h4>
+            <p>
+              View All
+              <img class="img" src="./assets/images/icon-caret-right.svg" alt="caret" />
+            </p>
+          </div>
+
+          <div class="details" *ngIf="transactions && transactions.length > 0; else noTransactions">
+            <ng-container *ngFor="let tx of transactions | slice : 0 : 5; let i = index">
+              <div class="d-flex justify-content-between">
+                <span class="d-flex">
+                  <img [src]="'assets/' + tx.avatar" alt="{{ tx.avatar }}" class="avatar me-3" />
+                  <p class="name">{{ tx.name }}</p>
+                </span>
+                <div>
+                  <span
+                    class="d-block amount"
+                    [ngStyle]="{
+                      color: (tx.amount ?? 0) > 0 ? 'var(--green)' : 'var(--grey-900)'
+                    }"
+                  >
+                    ${{ tx.amount | number : '1.2-2' }}
+                  </span>
+                  <span class="d-block date">{{ tx.date | date : 'dd MMM yyyy' }}</span>
+                </div>
+              </div>
+
+              <!-- خط تحت كل عنصر  -->
+              <hr *ngIf="i < transactions.length - 1 && i < 4" />
+            </ng-container>
+          </div>
+
+          <ng-template #noTransactions>
+            <p>No transactions found.</p>
+          </ng-template>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-12  g-0">
+        <div class="mt-3 Budgets">
+          <div class="d-flex justify-content-between mb-3">
+            <h4>Budgets</h4>
+            <p>
+              See Details
+              <img class="img" src="./assets/images/icon-caret-right.svg" alt="caret" />
+            </p>
+          </div>
+          <div class="d-flex justify-content-between gap-4">
+            <div class="canvas">
+              <canvas id="budgetChart"></canvas>
+              <div class="chartCenter">
+                <h4>${{ totalSpent }}</h4>
+                <p>of ${{ totalBudget }} limit</p>
+              </div>
+            </div>
+            <div class="row ms-5" *ngIf="budgets && budgets.length > 0">
+              <div
+                *ngFor="let b of budgets | slice : 0 : 4; let i = index"
+                class="budget-item"
+                [ngStyle]="{ 'border-left': '4px solid' + (b.theme ?? '#ccc') }"
+              >
+                <p class="my-0">{{ b.category }}</p>
+                <span>${{ b.maximum | number : '1.2-2' }}</span>
+              </div>
+              <ng-template #noBudgets>
+                <p>No budgets found.</p>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 RecurringBills">
+          <div class="d-flex justify-content-between mb-3">
+            <h4>Recurring Bills</h4>
+            <p>
+              See Details
+              <img class="img" src="./assets/images/icon-caret-right.svg" alt="caret" />
+            </p>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-between d">
+              <p>Paid Bills</p>
+              <span>$190.00</span>
+            </div>
+            <div class="d-flex justify-content-between g">
+              <p>Total Upcoming</p>
+              <span>$194.98</span>
+            </div>
+            <div class="d-flex justify-content-between h">
+              <p>Due Soon</p>
+              <span>$59.98</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

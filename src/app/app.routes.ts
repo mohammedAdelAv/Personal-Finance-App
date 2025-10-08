@@ -5,4 +5,8 @@ export const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./features/users/users.modules').then((then) => then.userModules),
   },
+    { path: "", pathMatch: "full", redirectTo: "overview" },
+
+    { path: "**", component: Error},
+
 ];
