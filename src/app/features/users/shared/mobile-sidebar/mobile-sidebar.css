@@ -9,6 +9,7 @@
   height: 4rem;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  z-index: 10000;
 }
 
 .sidebar .container-fluid .nav-link {

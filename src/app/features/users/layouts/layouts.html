@@ -1,4 +1,11 @@
 <div class="layout">
+  @if (!isMobileView) {
+  <div class="sidebar"><app-header></app-header></div>
+  } @else {
+  <div class="mobileSidebar">
+    <app-mobile-sidebar></app-mobile-sidebar>
+  </div>
+  }
   <main class="content">
     <router-outlet></router-outlet>
   </main>

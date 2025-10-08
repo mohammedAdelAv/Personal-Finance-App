@@ -1,10 +1,25 @@
 .layout {
   display: flex;
   align-items: stretch;
+
+}
+
+.sidebar {
+  width: 18.75rem;
+}
+
+.mobileSidebar {
+  height: 4rem ;
 }
 
 .content {
   flex: 1;
+
+}
+
+/* Minimize Sidebar */
+:host-context(body.collapsed) .sidebar {
+  width: 5.5rem;
 }
 
 

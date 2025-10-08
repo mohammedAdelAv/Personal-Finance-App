@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule, } from "@angular/common";
 import { DataService } from "../../../../services/data.service";
 import { Chart, registerables } from "chart.js";
 
