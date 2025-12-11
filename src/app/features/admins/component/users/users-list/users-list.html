@@ -1,0 +1,47 @@
+<div class="container pt-5">
+  <div class="row">
+    <div class="createUser d-flex justify-content-between">
+      <h5>User List</h5>
+      <a routerLink="/admins/uc" class="btn btn-info">Create User</a>
+    </div>
+
+    <div class="UserDeheader d-flex mt-4">
+      <div class="col userName ps-4">User Name</div>
+      <div class="col passWord text-end">Password</div>
+      <div class="col admin text-end">Admin</div>
+      <div class="col delete text-end pe-3">Delete user</div>
+    </div>
+
+    <hr />
+
+    @if (allUsers && allUsers.length > 0) { @for (au of allUsers; track au.userName; let i = $index)
+    {
+    <div class="details d-flex align-items-center">
+      <div class="col ps-4">
+        <span class="d-flex userName">
+          <p class="name">{{ au.userName }}</p>
+        </span>
+      </div>
+      <div class="col text-end">
+        <span class="d-block passWord">{{ au.passWord }}</span>
+      </div>
+      <div class="col text-end pe-3">
+        <span
+          class="d-block admin"
+          [ngStyle]="{
+            color: (au.admin ?? true) > 0 ? 'blue' : 'var(--grey-900)'
+          }"
+          >{{ au.admin }}</span
+        >
+      </div>
+      <div class="col text-end pe-3">
+        <button class="btn btn-danger">delete</button>
+      </div>
+    </div>
+    @if (i < allUsers.length - 1 && i < 8) {
+    <hr class="my-2" />
+    } } } @else {
+    <p>No users found.</p>
+    }
+  </div>
+</div>

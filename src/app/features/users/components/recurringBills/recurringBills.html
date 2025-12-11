@@ -1,1 +1,122 @@
-<h1>Hello from RecurringBills</h1>
+@if(!hideView){
+<div class="recurringBills">
+  <div class="container-fluid py-5">
+    <div class="pb-4">
+      <h1>Recurring Bills</h1>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-12 left">
+        <div class="totalBills mb-4">
+          <img src="./assets/images/icon-recurring-bills.svg" alt="icon" />
+          <p>Total Bills</p>
+          <span>${{ totalAll }}</span>
+        </div>
+        <div class="summary">
+          <p>Summary</p>
+          <div class="summaryDetalis">
+            <div class="summaryD">
+              <p>Paid Bills</p>
+              <span>{{ paidbills }}(${{ totalPaidbills }})</span>
+            </div>
+            <hr />
+            <div class="summaryD">
+              <p>Total Upcoming</p>
+              <span>{{ upcoming }}(${{ totalUpcoming }})</span>
+            </div>
+            <hr />
+            <div class="summaryD soon">
+              <p>Due Soon</p>
+              <span>{{ dueSoon }}(${{ totalDueSoon }})</span>
+            </div>
+            <hr />
+            <div class="summaryD overDue">
+              <p>Overdue</p>
+              <span>{{ overdue }}(${{ totalOverdue }})</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-12 right">
+        <div class="bills d-flex justify-content-between">
+          <form class="d-flex" role="search ">
+            <input class="form-control" placeholder="Search transaction" aria-label="Search" />
+            <img src="./assets/images/icon-search.svg" alt="search" class="iconS" />
+          </form>
+          <li class="dropdown filter-dropdown">
+            <div class="d-flex">
+              <span class="filter-label pe-3">Sort by</span>
+              <a
+                class="dropdown-toggl filter-btn d1"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="./assets/images/Icons Collection (Phosphor Icons).svg"
+                  alt=""
+                  class="iconmob"
+                />
+                <span class="span">{{ selectedSort }}</span>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)="setSort('Latest')">Latest</a></li>
+                <li><a class="dropdown-item" (click)="setSort('Oldest')">Oldest</a></li>
+                <li><a class="dropdown-item" (click)="setSort('A to Z')">A to Z</a></li>
+                <li><a class="dropdown-item" (click)="setSort('Z to A')">Z to A</a></li>
+                <li><a class="dropdown-item" (click)="setSort('Highest')">Highest</a></li>
+                <li><a class="dropdown-item" (click)="setSort('Lowest')">Lowest</a></li>
+              </ul>
+            </div>
+          </li>
+        </div>
+        <div class="header d-flex mt-4">
+          <div class="col recipientCol ps-4">Bill Title</div>
+          <div class="col datCol text-end desktopDate">Due Date</div>
+          <div class="col amountCol text-end">Amount</div>
+          <div class="col amountCol text-end pe-3">Status</div>
+        </div>
+        <hr />
+        @if (traData && traData.length > 0) { @for (tx of traData; let i = $index; track tx.name ) {
+        <div class="details d-flex align-items-center">
+          <div class="col ps-4">
+            <div class="mob">
+              <span class="d-flex Recipient">
+                <img [src]="'assets/' + tx.avatar" alt="{{ tx.avatar }}" class="avatar me-3" />
+                <p class="name">{{ tx.name }}</p>
+              </span>
+              <p class="d-block mobileDate">
+                {{ tx.date | date : 'dd MMM yyyy' }} <img [src]="tx.image" alt="" />
+              </p>
+            </div>
+          </div>
+          <div class="col text-end desktopDate">
+            <span class="d-block date"
+              >{{ tx.date | date : 'dd MMM yyyy' }} <img [src]="tx.image" alt=""
+            /></span>
+          </div>
+          <div class="col text-end">
+            <span class="d-block amount"> ${{ tx.amount | number : '1.2-2' }} </span>
+          </div>
+          <div class="col text-end pe-3">
+            <span class="d-block paid">
+              @if(tx.status !== "paid"){
+              <button type="button" (click)="markAsPaid(tx)">pay</button>
+              } @else {
+              <img src="./assets/images/icon-bill-paid.svg" alt="icon" />
+              }
+            </span>
+          </div>
+        </div>
+
+        @if (i < traData.length - 1 && i < traData.length) {
+        <hr class="my-2" />
+        } } } @else {
+        <p>No transactions found.</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}

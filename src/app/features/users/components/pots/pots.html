@@ -1,1 +1,328 @@
-<h1>Hello from Pots</h1>
+<div class="Pots">
+  <div class="container-fluid py-5">
+    <div class="head pb-4 d-flex justify-content-between">
+      <h1>Pots</h1>
+      <button class="btn" (click)="openAddPot()">+ Add New Pots</button>
+    </div>
+    <div class="row">
+      @if(potsData && potsData.length > 0){@for(p of potsData; let i = $index; track p.name){ @if (i
+      % 2 === 0) {
+
+      <div class="col-lg-6 col-12 potsDe mb-4">
+        <div class="left">
+          <div class="d-flex">
+            <span class="colorDot" [ngStyle]="{ 'background-color': p.theme }"></span>
+            <h4>{{ p.name }}</h4>
+            <img
+              class="ellipsis img-end"
+              (click)="toggleMenu(p)"
+              src="./assets/images/icon-ellipsis.svg"
+              alt="icon ellipsis"
+            />
+            @if ( openMenuId === p.id) {
+            <div class="deletPot">
+              <button class="btn" (click)="openDeleteMsg(p)">Delete Pot</button>
+            </div>
+            }
+          </div>
+          <div class="d-flex justify-content-between pt-5 pb-3 tS">
+            <p>Total Saved</p>
+            <span>${{ p.total | number : '1.2-2' }}</span>
+          </div>
+          <div class="progress">
+            <div
+              class="progressBar"
+              [style.width.%]="(p.total / p.target) * 100"
+              [style.background]="p.theme"
+            ></div>
+          </div>
+          <div class="row row-cols-2 de pt-3">
+            <div class="col pers">
+              <span>{{ dataPots[p.name]?.totalSaved | number : '1.2-2' }}%</span>
+            </div>
+            <div class="col targetOf text-end">
+              <span>Target Of ${{ p.target | number : '1.2-2' }}</span>
+            </div>
+          </div>
+          <div class="button d-flex justify-content-between gap-3 mt-5">
+            <button (click)="openAddMoney(p)">+ Add Money</button>
+            <button (click)="openWithdraw(p)">Withdraw</button>
+          </div>
+        </div>
+      </div>
+      } @if (i % 2 !== 0) {
+
+      <div class="col-lg-6 col-12 potsDe mb-4">
+        <div class="right">
+          <div class="d-flex">
+            <span class="colorDot" [ngStyle]="{ 'background-color': p.theme }"></span>
+            <h4>{{ p.name }}</h4>
+            <img
+              class="ellipsis img-end"
+              (click)="toggleMenu(p)"
+              src="./assets/images/icon-ellipsis.svg"
+              alt="icon ellipsis"
+            />
+            @if ( openMenuId === p.id) {
+            <div class="deletPot">
+              <button class="btn" (click)="openDeleteMsg(p)">Delete Pot</button>
+            </div>
+            }
+          </div>
+          <div class="d-flex justify-content-between pt-5 pb-3 tS">
+            <p>Total Saved</p>
+            <span>${{ p.total | number : '1.2-2' }}</span>
+          </div>
+          <div class="progress">
+            <div
+              class="progressBar"
+              [style.width.%]="(p.total / p.target) * 100"
+              [style.background]="p.theme"
+            ></div>
+          </div>
+          <div class="row row-cols-2 de pt-3">
+            <div class="col pers">
+              <span>{{ dataPots[p.name]?.totalSaved | number : '1.2-2' }}%</span>
+            </div>
+            <div class="col targetOf text-end">
+              <span>Target Of ${{ p.target | number : '1.2-2' }}</span>
+            </div>
+          </div>
+          <div class="button d-flex justify-content-between gap-3 mt-5">
+            <button (click)="openAddMoney(p)">+ Add Money</button>
+            <button (click)="openWithdraw(p)">Withdraw</button>
+          </div>
+        </div>
+      </div>
+
+      } }}
+    </div>
+  </div>
+
+  <!-- Modal -->
+
+  @if (isAddPotOpen){
+  <div class="modalOverLay">
+    <div class="modalcard">
+      <div class="modelHeader d-flex justify-content-between">
+        <h3>Add New Pot</h3>
+        <button class="colseBtn" (click)="closeAddPot()">
+          <img src="./assets/images/Close Button.svg" alt="Close Button" />
+        </button>
+      </div>
+      <p class="textMuted mt-2">
+        Create a pot to set savings targets. These can help keep you on track as you save for
+        special purchases.
+      </p>
+      <!-- Pot Name -->
+      <div class="pb-4">
+        <label class="formLabel d-block">Pot Name</label>
+        <input
+          type="text"
+          [(ngModel)]="newPot.name"
+          class="formControl"
+          placeholder="e.g. Rainy Days"
+        />
+      </div>
+      <!-- Target -->
+      <div class="pb-2">
+        <label class="formLabel">Target</label>
+        <div class="inputGroup">
+          <input
+            type="number"
+            [(ngModel)]="newPot.target"
+            class="formControl"
+            placeholder="$ e.g. 2000"
+          />
+        </div>
+      </div>
+      <!-- Theme Colors as Dropdown -->
+      <div class="mb-3">
+        <label class="formLabel d-block">Theme</label>
+        <div class="themeDropdown" (click)="toggleThemeDropdown()">
+          <div class="themeTrigger d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+              <span class="colorDotInline" [ngStyle]="{ 'background-color': newPot.theme }"></span>
+              <span>{{ selectedColorName }}</span>
+            </div>
+            <img src="./assets/images/icon-caret-down.svg" alt="caret" class="caretIcon" />
+          </div>
+
+          <!-- dropdown -->
+          @if (isThemeOpen) {
+          <div class="themeOptions">
+            @for (c of colors; let i = $index; track c.name) {
+            <div
+              class="themeOptionI d-flex align-items-center gap-2"
+              [class.disabledOption]="isColorUsed(c.color)"
+              (click)="selectTheme(c); $event.stopPropagation()"
+            >
+              <span
+                class="colorDotInline"
+                [ngStyle]="{ 'background-color': c.color }"
+                [ngClass]="{ 'used-dot': isColorUsed(c.color) }"
+              ></span>
+              <span
+                class="colorName"
+                [style.color]="isColorUsed(c.color) ? 'var(--grey-500)' : 'var(--grey-900)'"
+                >{{ c.name }}</span
+              >
+              <!-- if color used -->
+              @if (isColorUsed(c.color)) {
+              <span class="usedLabel text-end">Already used</span>
+
+              <!-- if color selected  -->
+              } @if ( newPot.theme === c.color){
+              <img
+                class="img img-end"
+                src="./assets/images/icon-selected.svg"
+                alt="selected icon"
+              />
+              }
+            </div>
+            @if( i < (colors.length - 1)){
+            <hr />
+            } }
+          </div>
+          }
+        </div>
+      </div>
+
+      <button class="btn btn-dark w-100" type="button" (click)="addPot()">Add Pot</button>
+    </div>
+  </div>
+  }
+
+  <!-- Delete msg -->
+  @if (isDeleteMsgOpen){
+  <div class="deleteMsg">
+    <div class="deleteCard">
+      <div class="deleteHeader d-flex justify-content-between">
+        <h3>Delete '{{ potToDelete.name }}' ?</h3>
+        <button class="colseBtn" (click)="closeDeletePot()">
+          <img src="./assets/images/Close Button.svg" alt="Close Button" />
+        </button>
+      </div>
+      <p class="textMuted mt-3">
+        Are you sure you want to delete this budget? This action cannot be reversed, and all the
+        data inside it will be removed forever.
+      </p>
+      <div class="btns">
+        <button class="btnD w-100" type="button" (click)="deletePot()">
+          Yes, Confirm Deletion
+        </button>
+        <button class="btn w-100" type="button" (click)="closeDeletePot()">
+          No, I want to go back
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- Withdraw -->
+  @if (isWithdrawOpen){
+  <div class="Withdraw">
+    <div class="WithdrawCard">
+      <div class="WithdrawHeader d-flex justify-content-between">
+        <h3>Withdraw from ‘{{ selectedPot.name }}’</h3>
+        <button class="colseBtn" (click)="closeWithdraw()">
+          <img src="./assets/images/Close Button.svg" alt="Close Button" />
+        </button>
+      </div>
+      <p class="textMuted mt-3">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque
+        aliquet nibh nec urna. In nisi neque, aliquet.
+      </p>
+      <div class="newAmount d-flex justify-content-between align-items-center pb-3">
+        <p>New Amount</p>
+        <span>{{ newAmount }}$</span>
+      </div>
+      <!-- progress bar -->
+      <div class="progress">
+        <div
+          class="progressBar"
+          [style.width.%]="( newAmount / selectedPot.target) * 100"
+          [style.background]="selectedPot.theme"
+        ></div>
+      </div>
+      <div class="row row-cols-2 de pt-3">
+        <div class="col pers">
+          <span>{{ newPercent }}%</span>
+        </div>
+        <div class="col targetOf text-end">
+          <span>Target Of ${{ selectedPot.target }}</span>
+        </div>
+      </div>
+      <!-- amount -->
+      <div class="pb-2">
+        <label class="formLabel">Amount to Withdraw</label>
+        <div class="inputGroup">
+          <input
+            type="number"
+            class="formControl"
+            [(ngModel)]="withdrawAmount"
+            placeholder="$ e.g. 2000"
+          />
+        </div>
+      </div>
+      <button class="btn btn-dark w-100" type="button" (click)="confirmWithdraw()">
+        Confirm Withdrawal
+      </button>
+    </div>
+  </div>
+  }
+
+  <!-- Add Money -->
+  @if (isAddMoneyOpen){
+  <div class="addMoney">
+    <div class="addMoneyCard">
+      <div class="addMoneyHeader d-flex justify-content-between">
+        <h3>Add to ‘{{ selectedPotToAddMoney.name }}’</h3>
+        <button class="colseBtn" (click)="closeAddMoney()">
+          <img src="./assets/images/Close Button.svg" alt="Close Button" />
+        </button>
+      </div>
+      <p class="textMuted mt-3">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
+        hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet.
+      </p>
+      <div class="newAmount d-flex justify-content-between align-items-center pb-3">
+        <p>New Amount</p>
+        <span>{{ newAmountAddMoney }}$</span>
+      </div>
+      <!-- progress bar -->
+      <div class="progress">
+        <div
+          class="progressBar"
+          [style.width.%]="( newAmountAddMoney / selectedPotToAddMoney.target) * 100"
+          [style.background]="selectedPotToAddMoney.theme"
+        ></div>
+      </div>
+      <div class="row row-cols-2 de pt-3">
+        <div class="col pers">
+          <span>{{ newPercentAddMoney }}%</span>
+        </div>
+        <div class="col targetOf text-end">
+          <span>Target Of ${{ selectedPotToAddMoney.target }}</span>
+        </div>
+      </div>
+      <!-- amount -->
+      <div class="pb-2">
+        <label class="formLabel">Amount to Add</label>
+        <div class="inputGroup">
+          <input
+            type="number"
+            class="formControl"
+            [(ngModel)]="addMoneyAmount"
+            placeholder="$ e.g. 2000"
+          />
+        </div>
+      </div>
+      <button class="btn btn-dark w-100" type="button" (click)="confirmAddMoney()">
+        Confirm Addition
+      </button>
+    </div>
+  </div>
+  }
+
+</div>

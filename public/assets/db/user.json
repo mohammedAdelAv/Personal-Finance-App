@@ -1,3 +1,28 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "1",
+      "userName": "Emma",
+      "passWord": "Asfef643",
+      "admin": false
+    },
+    {
+      "id": "2",
+      "userName": "Mohammed",
+      "passWord": "Sadwd23",
+      "admin": true
+    },
+    {
+      "id": "3",
+      "userName": "Savory",
+      "passWord": "Asf643",
+      "admin": false
+    },
+    {
+      "id": "4",
+      "userName": "ahmed",
+      "passWord": "Asf64543",
+      "admin": true
+    }
+  ]
 }

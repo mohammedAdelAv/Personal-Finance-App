@@ -1,0 +1,62 @@
+.container .row {
+  background-color: var(--beige-100);
+  padding: var(--spacing-400);
+  border-radius: 15px;
+}
+
+.container .row .createUser {
+  border: solid 1px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.container .row .createUser h5 {
+  margin: auto 0;
+  font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.container .row .cardBody .selectGroup {
+  border: solid 1px var(--red);
+  max-width: 49%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.container .row .cardBody .selectGroup h3 {
+  font-size: var(--text-preset-3-font-size);
+  line-height: var(--text-preset-3-line-height);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  color: var(--red);
+  margin: auto 0;
+}
+
+.container .row .cardBody .selectGroup select {
+  width: 5rem;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+/* error msg */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.error-msg {
+  margin-top: 4px;
+  padding: 8px 10px;
+  background: #f8d7da;
+  border: 1px solid #f5c2c7;
+  color: #842029;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* end error msg */

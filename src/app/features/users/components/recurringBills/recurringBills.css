@@ -1,0 +1,280 @@
+.recurringBills {
+  padding-left: var(--spacing-500);
+  padding-right: var(--spacing-500);
+  background-color: var(--beige-100);
+  min-height: 100vh;
+}
+
+.recurringBills .container-fluid h1 {
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Left */
+
+.recurringBills .container-fluid .row .left .totalBills {
+  background-color: var(--grey-900);
+  border-radius: 15px;
+  padding: var(--spacing-300);
+}
+
+.recurringBills .container-fluid .row .left .totalBills p {
+  color: var(--white);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  padding-top: 32px;
+}
+
+.recurringBills .container-fluid .row .left .totalBills span {
+  color: var(--white);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.recurringBills .container-fluid .row .left .summary {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: var(--spacing-250);
+}
+
+.recurringBills .container-fluid .row .left .summary p {
+  font-size: var(--text-preset-3-font-size);
+  line-height: var(--text-preset-3-line-height);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis .summaryD {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis p {
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  color: var(--grey-500);
+  font-weight: var(--font-weight-regular);
+  margin: auto 0;
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis span {
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis .soon p {
+  color: var(--yellow);
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis .soon span {
+  color: var(--yellow);
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis .overDue p {
+  color: var(--red);
+}
+
+.recurringBills .container-fluid .row .left .summary .summaryDetalis .overDue span {
+  color: var(--red);
+}
+
+/* End Left */
+
+/* Right */
+
+.recurringBills .container-fluid .row .right {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: var(--spacing-400);
+}
+
+.recurringBills .container-fluid .row .right .bills form {
+  position: relative;
+}
+
+.recurringBills .container-fluid .row .right .bills .form-control {
+  border: 2px solid var(--beige-500);
+  width: 18rem;
+}
+
+.recurringBills .container-fluid .row .right .bills .iconS {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  right: 1px;
+  padding: 1rem;
+}
+
+.recurringBills .container-fluid .row .right .dropdown {
+  list-style: none;
+}
+
+.recurringBills .container-fluid .row .right .dropdown .dropdown-toggl {
+  text-decoration: none;
+  border: 1px solid var(--beige-500);
+  border-radius: 6px;
+  padding: 0.5rem 2rem;
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.recurringBills .container-fluid .row .right .dropdown .filter-label {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  margin: auto;
+}
+
+.recurringBills .container-fluid .row .right .dropdown .iconmob {
+  display: none;
+}
+
+.recurringBills .container-fluid .row .right .dropdown .dropdown-menu {
+  min-width: auto;
+}
+
+.recurringBills .container-fluid .row .right .header .col {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.recurringBills .container-fluid .row .right .details .Recipient .avatar {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.recurringBills .container-fluid .row .right .details .Recipient .name {
+  margin: auto 0;
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.recurringBills .container-fluid .row .right .details .mob .mobileDate {
+  display: none !important;
+}
+
+.recurringBills .container-fluid .row .right .details .date {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.recurringBills .container-fluid .row .right .details .date img {
+  padding-left: 0.5rem;
+}
+
+.recurringBills .container-fluid .row .right .details .amount {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.recurringBills .container-fluid .row .right .details .paid button {
+  border-radius: 8px;
+  padding: var(--spacing-50);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  border: 1px solid green;
+  color: green;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.recurringBills .container-fluid .row .right .details .paid img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.recurringBills .container-fluid .row .right .details .paid button:hover {
+  background-color: green;
+  color: var(--white);
+}
+
+/* End Right */
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  /* left */
+
+  .recurringBills .container-fluid .row .left .summary {
+    margin-bottom: 20px;
+  }
+
+  /* end left */
+
+  /* Right */
+
+  .recurringBills .container-fluid .row .right .dropdown .dropdown-toggl {
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .recurringBills .container-fluid .row .right .dropdown .dropdown-toggl .span {
+    display: none;
+  }
+
+  .recurringBills .container-fluid .row .right .dropdown .filter-label {
+    display: none;
+  }
+
+  .recurringBills .container-fluid .row .right .dropdown .iconmob {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .recurringBills .container-fluid .row .right .header .desktopDate {
+    display: none !important;
+  }
+
+  .recurringBills .container-fluid .row .right .details .desktopDate {
+    display: none !important;
+  }
+
+  .recurringBills .container-fluid .row .right .details .mob .mobileDate {
+    display: block !important;
+    padding-top: 5px;
+    margin: 0 auto ;
+  }
+
+  .recurringBills .container-fluid .row .right .details .Recipient .avatar {
+    margin: auto 0;
+  }
+
+  /* end Right */
+}
+
+/* End Mobile */

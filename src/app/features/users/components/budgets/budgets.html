@@ -1,1 +1,114 @@
-<h1>Hello from Budgets </h1>
+@if(!hideView){
+<div class="Budgets">
+  <div class="container-fluid py-5">
+    <div class="head pb-4 d-flex justify-content-between">
+      <h1>Budgets</h1>
+      <button class="btn">+ Add New Budget</button>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-12 left">
+        <div class="spendingSummary mb-4">
+          <div class="canvas">
+            <canvas id="budgetChart"></canvas>
+            <div class="chartCenter">
+              <h4>${{ totalSpent }}</h4>
+              <p>of ${{ totalBudget }} limit</p>
+            </div>
+          </div>
+          @if (budgetData && budgetData.length > 0) {
+          <div class="">
+            @for(b of budgetData; let i = $index; track b.category){
+            <div
+              class="budget-item ps-3 d-flex justify-content-between"
+              [ngStyle]="{ 'border-left': '4px solid' + (b.theme ?? '#ccc') }"
+            >
+              <p class="category my-0">{{ b.category }}</p>
+
+              <p class="n">
+                ${{ totals[b.category]?.spent | number : '1.2-2' }}
+                <span class="ofN">of ${{ b.maximum | number : '1.2-2' }}</span>
+              </p>
+            </div>
+            @if( i < (budgetData.length - 1)){
+            <hr />
+            } }
+          </div>
+          } @else {
+          <p>No budgets found.</p>
+          }
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-12 right">
+        @if (budgetData && budgetData.length > 0) { @for(b of budgetData; let i = $index; track
+        b.category){
+        <div class="entertainment mb-4">
+          <div class="d-flex">
+            <span
+              class="dot"
+              [ngStyle]="{ 'background-color': b.theme || totals[b.category]?.theme }"
+            ></span>
+            <h4>{{ b.category }}</h4>
+            <img
+              class="ellipsis img-end"
+              src="./assets/images/icon-ellipsis.svg"
+              alt="icon ellipsis"
+            />
+          </div>
+          <p class="pt-3">Maximum of ${{ b.maximum | number : '1.2-2' }}</p>
+          <div class="progress">
+            <div
+              class="progressBar"
+              [style.width.%]="(categoryTotals[b.category] / b.maximum) * 100"
+              [style.background]="b.theme"
+            ></div>
+          </div>
+          <div class="row row-cols-2 de pt-3">
+            <div
+              class="col spent"
+              [ngStyle]="{ 'border-left': '4px solid' + totals[b.category]?.theme }"
+            >
+              <p>Spent</p>
+              <span>${{ totals[b.category]?.spent | number : '1.2-2' }}</span>
+            </div>
+            <div class="col remaining">
+              <p>Remaining</p>
+              <span>${{ totals[b.category]?.remaining | number : '1.2-2' }}</span>
+            </div>
+          </div>
+          <div class="details mt-4">
+            <div class="d-flex justify-content-between pb-3">
+              <h5>Latest Spending</h5>
+              <a
+                class="seeAll"
+                routerLink="/users/transactions"
+                [queryParams]="{ category: b.category }"
+              >
+                See All
+                <img class="img ms-2" src="./assets/images/icon-caret-right.svg" alt="caret" />
+              </a>
+            </div>
+            @if(transactionsData && transactionsData.length > 0){ @for(tx of
+            transactionsCategory[b.category] | slice : 0 : 3; let j = $index; track tx.name){
+            <div class="d-flex justify-content-between">
+              <span class="d-flex">
+                <img [src]="'assets/' + tx.avatar" alt="{{ tx.avatar }}" class="avatar me-3" />
+                <p class="name">{{ tx.name }}</p>
+              </span>
+              <div>
+                <span class="d-block amount"> ${{ tx.amount | number : '1.2-2' }} </span>
+                <span class="d-block date">{{ tx.date | date : 'dd MMM yyyy' }}</span>
+              </div>
+            </div>
+            @if( j < (transactionsCategory[b.category].length -1 ) && j < 2){
+            <hr />
+            } } }
+          </div>
+        </div>
+
+        } }
+      </div>
+    </div>
+  </div>
+</div>
+}

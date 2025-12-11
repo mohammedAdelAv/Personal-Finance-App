@@ -1,3 +1,234 @@
-h1 {
-  color: brown;
+.Transaction {
+  padding-left: var(--spacing-500);
+  padding-right: var(--spacing-500);
+  background-color: var(--beige-100);
+  min-height: 100vh;
+}
+
+.row {
+  background-color: var(--white);
+  padding: var(--spacing-400);
+  border-radius: 15px;
+}
+
+.row form {
+  position: relative;
+}
+
+.Transaction .row .form-control {
+  width: 18rem;
+  border: 2px solid black;
+}
+
+.Transaction .row .iconS {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  right: 1px;
+  padding: 1rem;
+}
+
+/* Dropdown */
+
+.Transaction .container-fluid .row .dropdown {
+  list-style: none;
+}
+
+.Transaction .container-fluid .row .dropdown-toggl {
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 0.5rem 2rem;
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Transaction .container-fluid .row .dropdown .filter-label {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  margin: auto;
+}
+
+.Transaction .container-fluid .row .iconmob {
+  display: none;
+}
+
+/* End Dropdown */
+
+/*  */
+
+.Transaction .container-fluid .row .transactionheader div {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Transaction .container-fluid .row hr {
+  background-color: var(--grey-100);
+  height: 1px;
+  margin: 1rem 0;
+}
+
+/* Details */
+
+.details .Recipient .avatar {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.details .Recipient .name {
+  margin: auto 0;
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.details .Category {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.details .date {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.details .amount {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+/* End Details */
+
+/* Pagination */
+
+.Pagination .ul {
+  margin: auto;
+}
+
+.Pagination .paginationL {
+  margin-bottom: 0 !important;
+}
+
+.Pagination .btn1 {
+  border: 1px solid var(--grey-500);
+  border-radius: 10px;
+  padding: 0px 1rem;
+  background: none;
+}
+
+.Pagination .btn1:hover {
+  background: var(--grey-500);
+}
+
+.Pagination button a:hover {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.Pagination button a,
+.Pagination .paginationL a {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Pagination .paginationL a {
+  border: 1px solid;
+  padding: 0.7rem;
+  border-radius: 10px;
+}
+
+.Pagination .paginationL a:active {
+  color: var(--white);
+  background-color: var(--grey-900);
+}
+
+.Pagination .paginationL a:hover {
+  color: var(--white);
+  background-color: var(--grey-500);
+  cursor: pointer;
+}
+/* End Pagination */
+
+/* Tablet  */
+
+@media (max-width: 900px) {
+
+  .Transaction .row .mb-lg-0 {
+    margin-bottom: 0rem;
+    padding-left: 5rem;
+  }
+
+  .Transaction .row .form-control {
+    width: 14rem;
+  }
+
+  /* Dropdown */
+
+  .Transaction .container-fluid .row .d1 {
+    padding: 0.5rem 1rem;
+  }
+
+  /* End Dropdown */
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+  .Transaction .row .mb-lg-0 {
+    margin-bottom: 0rem;
+  }
+
+  /* Dropdown */
+
+  .Transaction .container-fluid .row .dropdown {
+    list-style: none;
+  }
+
+  .Transaction .container-fluid .row .dropdown-toggl {
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .Transaction .container-fluid .row .dropdown-toggl .span {
+    display: none;
+  }
+
+  .Transaction .container-fluid .row .dropdown .filter-label {
+    display: none;
+  }
+
+  .Transaction .container-fluid .row .iconmob {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* End Dropdown */
 }

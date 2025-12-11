@@ -1,1 +1,139 @@
-<h1>Hello from Transactions</h1>
+<div class="Transaction">
+  <div class="container-fluid py-5 g-0">
+    <div class="pb-4">
+      <h1>Transaction</h1>
+    </div>
+    <div class="row g-0">
+      <div class="d-flex g-0">
+        <div class="container-fluid d-flex justify-content-between">
+          <form class="d-flex" role="search ">
+            <input class="form-control" placeholder="Search transaction" aria-label="Search" />
+            <img src="./assets/images/icon-search.svg" alt="search" class="iconS" />
+          </form>
+
+          <ul class="mb-lg-0 d-flex align-items-center gap-3">
+            <li class="dropdown filter-dropdown">
+              <div class="d-flex">
+                <span class="filter-label pe-3">Sort by</span>
+                <a
+                  class="dropdown-toggl filter-btn d1"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./assets/images/Icons Collection (Phosphor Icons).svg"
+                    alt=""
+                    class="iconmob"
+                  />
+                  <span class="span">{{selectedSort}}</span>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" (click)="setSort('Latest')">Latest</a></li>
+                  <li><a class="dropdown-item" (click)="setSort('Oldest')">Oldest</a></li>
+                  <li><a class="dropdown-item" (click)="setSort('A to Z')">A to Z</a></li>
+                  <li><a class="dropdown-item" (click)="setSort('Z to A')">Z to A</a></li>
+                  <li><a class="dropdown-item" (click)="setSort('Highest')">Highest</a></li>
+                  <li><a class="dropdown-item" (click)="setSort('Lowest')">Lowest</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="dropdown filter-dropdown ps-1 pe-4">
+              <div class="d-flex">
+                <span class="filter-label pe-3">Categroy</span>
+                <a
+                  class="dropdown-toggl filter-btn d2"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="./assets/images/icon-filter-mobile.svg" alt="" class="iconmob" />
+                  <span class="span">{{selectedCategroy}}</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" (click)="setCategroy('All Transactions')">All Transactions</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Entertainment')">Entertainment</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('General')">General</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Education')">Education</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Lifestyle')">Lifestyle</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Shopping')">Shopping</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Bills')">Bills</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Groceries')">Groceries</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Dining Out')">Dining Out</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Transportation')">Transportation</a></li>
+                  <li><a class="dropdown-item" (click)="setCategroy('Personal Care')">Personal Care</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="transactionheader d-flex mt-4">
+        <div class="col recipientCol ps-4">Recipient / Sender</div>
+        <div class="col categoryol text-end">Category</div>
+        <div class="col datCol text-end">Transaction Date</div>
+        <div class="col amountCol text-end pe-3">Amount</div>
+      </div>
+      <hr />
+      @if (filtered && filtered.length > 0) { @for (tx of paginatedtransactions; let i = $index; track
+      tx.name) {
+      <div class="details d-flex align-items-center">
+        <div class="col ps-4">
+          <span class="d-flex Recipient">
+            <img [src]="'assets/' + tx.avatar" alt="{{ tx.avatar }}" class="avatar me-3" />
+            <p class="name">{{ tx.name }}</p>
+          </span>
+        </div>
+        <div class="col text-end">
+          <span class="d-block Category">{{ tx.category }}</span>
+        </div>
+        <div class="col text-end">
+          <span class="d-block date">{{ tx.date | date : 'dd MMM yyyy' }}</span>
+        </div>
+        <div class="col text-end pe-3">
+          <span
+            class="d-block .amount"
+            [ngStyle]="{
+              color: (tx.amount ?? 0) > 0 ? 'var(--green)' : 'var(--grey-900)'
+            }"
+          >
+            ${{ tx.amount | number : '1.2-2' }}
+          </span>
+        </div>
+      </div>
+
+      @if (i < transactions.length - 1 && i < 9) {
+      <hr class="my-2" />
+      } } } @else {
+      <p>No transactions found.</p>
+      }
+
+      <div class="Pagination d-flex justify-content-between pt-5">
+        <button class="btn1" (click)="changePage(page - 1)" [disabled]="page === 1">
+          <img src="./assets/images/icon-caret-left.svg" alt="arrow" />
+          <a class="btn">Prev</a>
+        </button>
+        <div class="ul">
+          <ul class="paginationL gap-2 d-flex list-unstyled">
+            @for (p of pages; track $index ) {
+            <li class="pageItem" [class.active]="page === p" (click)="changePage(p)">
+              <a class="text-decoration-none">{{ p }}</a>
+            </li>
+            }
+          </ul>
+        </div>
+        <button
+          class="btn1"
+          (click)="changePage(page + 1)"
+          [disabled]="page === pages.length || pages.length === 0"
+        >
+          <a class="btn">Next</a><img src="./assets/images/icon-caret-right.svg" alt="arrow" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@ import { recurringBills } from "./components/recurringBills/recurringBills";
 
 import { Layouts } from "./layouts/layouts";
 
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: "transactions", component: transactions },
       { path: "budgets", component: budgets },
       { path: "pots", component: pots },
-      {path: "recurringBills", component: recurringBills},
+      { path: "recurringBills", component: recurringBills },
 
       { path: "", pathMatch: "full", redirectTo: "overview" },
     ],
@@ -31,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), NgxPaginationModule],
   exports: [RouterModule],
 })
 

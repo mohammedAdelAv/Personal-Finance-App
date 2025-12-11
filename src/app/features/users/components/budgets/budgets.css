@@ -1,3 +1,228 @@
-h1 {
-  color: chartreuse;
+.Budgets {
+  padding-left: var(--spacing-500);
+  padding-right: var(--spacing-500);
+  background-color: var(--beige-100);
+  min-height: 100vh;
 }
+
+.Budgets .container-fluid .head h1 {
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .container-fluid .head .btn {
+  background-color: var(--grey-900);
+  color: var(--white);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Left */
+
+.Budgets .container-fluid .row .spendingSummary {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: var(--spacing-400);
+}
+
+.Budgets .container-fluid .row .spendingSummary .canvas {
+  width: 230px;
+  height: 230px;
+  position: relative;
+  margin: 1rem auto 2rem;
+}
+
+.Budgets .container-fluid .row .spendingSummary .canvas .chartCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.Budgets .container-fluid .row .spendingSummary .canvas .chartCenter h4 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .container-fluid .row .spendingSummary .canvas .chartCenter p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Budgets .container-fluid .row .spendingSummary .category {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Budgets .container-fluid .row .spendingSummary .n {
+  color: var(--grey-900);
+  font-size: var(--text-preset-3-font-size);
+  line-height: var(--text-preset-3-line-height);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0px;
+}
+
+.Budgets .container-fluid .row .spendingSummary .ofN {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+/* End Left */
+
+/* Right */
+
+.Budgets .container-fluid .row .right .entertainment {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: var(--spacing-400);
+}
+
+.Budgets .container-fluid .row .right .entertainment .dot {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin: auto 0;
+}
+
+.Budgets .container-fluid .row .right .entertainment h4 {
+  margin-bottom: 0px;
+  margin: auto 0;
+  padding-left: 1rem;
+  color: var(--grey-900);
+  font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .container-fluid .row .right .entertainment .ellipsis {
+  margin-left: auto;
+}
+
+.Budgets .container-fluid .row .right .entertainment p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Budgets .container-fluid .row .right .progress {
+  height: 2rem;
+  background: var(--beige-100);
+  border-radius: 4px;
+}
+
+.Budgets .container-fluid .row .right .progressBar {
+  height: 75%;
+  background: var(--beige-100);
+  margin: auto 0;
+  border-radius: 4px;
+}
+
+.Budgets .container-fluid .row .right .de {
+  margin-left: 0px;
+}
+
+.Budgets .container-fluid .row .right .row p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: 5px;
+}
+
+.Budgets .container-fluid .row .right .row span {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .container-fluid .row .right .row .spent {
+  height: 2.7rem;
+  padding-right: 0px;
+}
+
+.Budgets .container-fluid .row .right .row .remaining {
+  border-left: 4px solid var(--beige-100);
+  height: 2.7rem;
+  padding-right: 0px;
+}
+
+.Budgets .container-fluid .row .right .details {
+  background-color: var(--beige-100);
+  border-radius: 12px;
+  padding: var(--spacing-250);
+}
+
+.Budgets .container-fluid .row .right .details h5 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-3-font-size);
+  line-height: var(--text-preset-3-line-height);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Budgets .container-fluid .row .right .details a {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  text-decoration-line: none;
+}
+
+.Budgets .container-fluid .row .right .details .avatar {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.Budgets .container-fluid .row .right .details .name {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  margin: auto;
+}
+
+.Budgets .container-fluid .row .right .details .date {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Budgets .container-fluid .row .right .details .amount {
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+

@@ -1,3 +1,602 @@
-h1 {
-  color: bisque;
+.Pots {
+  padding-left: var(--spacing-500);
+  padding-right: var(--spacing-500);
+  background-color: var(--beige-100);
+  min-height: 100vh;
+}
+
+.Pots .container-fluid .head h1 {
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+}
+
+.Pots .container-fluid .head .btn {
+  background-color: var(--grey-900);
+  color: var(--white);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+/*
+.Pots .container-fluid .potsDe {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: var(--spacing-400);
+
+} */
+
+.Pots .container-fluid .right {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: var(--spacing-400);
+  position: relative;
+}
+
+.Pots .container-fluid .left {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: var(--spacing-400);
+  position: relative;
+}
+
+.Pots .container-fluid .potsDe .colorDot {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin: auto 0;
+}
+
+.Pots .container-fluid .potsDe h4 {
+  margin-bottom: 0px;
+  margin: auto 0;
+  padding-left: 1rem;
+  color: var(--grey-900);
+  font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Pots .container-fluid .potsDe .ellipsis {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* delet pot */
+.Pots .container-fluid .potsDe .deletPot {
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  right: 30px;
+  top: 60px;
+  z-index: 999;
+}
+
+.Pots .container-fluid .potsDe .deletPot .btn {
+  color: var(--red);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  padding: 10px 14px;
+}
+
+.Pots .container-fluid .potsDe .tS p {
+  margin-bottom: 0px;
+  margin: auto 0;
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Pots .container-fluid .potsDe .tS span {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Pots .container-fluid .potsDe .pers {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Pots .container-fluid .potsDe .targetOf {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Pots .container-fluid .potsDe .button button {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--beige-100);
+  border-radius: 8px;
+  width: 100%;
+  height: 3rem;
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+.Pots .container-fluid .potsDe .button button:hover {
+  background-color: var(--white);
+  outline: 1px solid var(--beige-500);
+}
+
+/* Modal */
+
+.modalOverLay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalcard {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 35rem;
+  width: 100%;
+}
+
+.modalOverLay .modalcard .modelHeader h3 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.modalOverLay .modalcard .modelHeader .colseBtn {
+  all: unset;
+}
+
+.modalOverLay .modalcard p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.modalOverLay .modalcard .formLabel {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  padding-bottom: 0.5rem;
+}
+
+/* .modalOverLay .modalcard .formControl {
+  width: 100%;
+  border-radius: 8px;
+  height: 2.8rem;
+  border: 2px solid var(--beige-500);
+  padding-left: 1rem;
+  margin: auto 0;
+} */
+
+.modalOverLay .modalcard .formControl {
+  width: 100%;
+  border-radius: 8px;
+  height: 2.8rem;
+  border: 2px solid var(--beige-500);
+  padding-left: 1rem;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.modalOverLay .modalcard .formControl:focus {
+  outline: none;
+  outline: 3px solid var(--grey-300);
+  outline-offset: 2px;
+}
+
+.modalOverLay .modalcard .formControl::placeholder {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Form Select  */
+.themeDropdown {
+  position: relative;
+}
+
+.themeTrigger {
+  border: 2px solid var(--beige-500);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+}
+
+.themeTrigger .colorDotInline {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.themeDropdown .themeTrigger .caretIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.themeOptions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background-color: #fff;
+  border: 1px solid var(--beige-500);
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  scrollbar-width: none;
+}
+
+.themeOptions .themeOptionI {
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+}
+
+.themeOptions .themeOptionI.disabledOption {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.themeOptions .themeOptionI:hover {
+  background-color: var(--beige-100);
+}
+
+.themeOptions .themeOptionI .colorDotInline {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.used-dot {
+  opacity: 0.3;
+}
+
+.themeOptions .themeOptionI .colorName {
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.themeOptions .themeOptionI .img {
+  margin-left: auto;
+}
+
+.themeOptions .themeOptionI .usedLabel {
+  margin-left: auto;
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+hr {
+  margin: 0.25rem auto;
+  width: 90%;
+  color: var(--grey-300);
+  height: 1px;
+}
+/* End Form Select */
+
+.modalcard .btn {
+  height: 3rem;
+}
+
+/* End Modal */
+
+/* Delete Msg */
+
+.deleteMsg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.deleteMsg .deleteCard {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 21rem;
+  width: 100%;
+}
+
+.deleteMsg .deleteCard .deleteHeader h3 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.deleteMsg .deleteCard .textMuted {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.deleteMsg .deleteCard .deleteHeader .colseBtn {
+  all: unset;
+}
+
+.deleteMsg .deleteCard .btns .btnD {
+  padding: 1rem;
+  color: var(--white);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--red);
+  border-radius: 8px;
+  border: none;
+}
+
+.deleteMsg .deleteCard .btns .btn {
+  padding-top: 1rem;
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  border: none;
+}
+
+/* End Delete Msg */
+
+/* Withdraw */
+
+.Withdraw {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.Withdraw .WithdrawCard {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 35rem;
+  width: 100%;
+}
+
+.Withdraw .WithdrawCard .WithdrawHeader h3 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Withdraw .WithdrawCard .WithdrawHeader .colseBtn {
+  all: unset;
+}
+
+.Withdraw .WithdrawCard .textMuted {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.Withdraw .WithdrawCard .newAmount p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  margin: auto 0;
+}
+
+.Withdraw .WithdrawCard .newAmount span {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Withdraw .WithdrawCard .formLabel {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  padding-bottom: 0.6rem;
+}
+
+.Withdraw .WithdrawCard .formControl {
+  width: 100%;
+  border-radius: 8px;
+  height: 2.8rem;
+  border: 2px solid var(--beige-500);
+  padding-left: 1rem;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.Withdraw .WithdrawCard .formControl:focus {
+  outline: none;
+  outline: 3px solid var(--grey-300);
+  outline-offset: 2px;
+}
+
+.Withdraw .WithdrawCard .de .pers {
+  color: var(--red);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.Withdraw .WithdrawCard .de .targetOf {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+/* End Withdraw */
+
+/* Add Money */
+
+.addMoney {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.addMoney .addMoneyCard {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 35rem;
+  width: 100%;
+}
+
+.addMoney .addMoneyCard .addMoneyHeader h3 {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.addMoney .addMoneyCard .addMoneyHeader .colseBtn {
+  all: unset;
+}
+
+.addMoney .addMoneyCard .textMuted {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.addMoney .addMoneyCard .newAmount p {
+  color: var(--grey-500);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-regular);
+  margin: auto 0;
+}
+
+.addMoney .addMoneyCard .newAmount span {
+  color: var(--grey-900);
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.addMoney .addMoneyCard .formLabel {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-bold);
+  padding-bottom: 0.6rem;
+}
+
+.addMoney .addMoneyCard .formControl {
+  width: 100%;
+  border-radius: 8px;
+  height: 2.8rem;
+  border: 2px solid var(--beige-500);
+  padding-left: 1rem;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.addMoney .addMoneyCard .formControl:focus {
+  outline: none;
+  outline: 3px solid var(--grey-300);
+  outline-offset: 2px;
+}
+
+.addMoney .addMoneyCard .de .pers {
+  color: var(--red);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.addMoney .addMoneyCard .de .targetOf {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+/* End Add Money */
+
+@media (max-width: 500px) {
+  .modalcard {
+    max-width: 20rem;
+  }
+
+  .deleteMsg .deleteCard {
+    max-width: 20rem;
+  }
+
+  .Withdraw .WithdrawCard {
+    max-width: 20rem;
+  }
+
+  .addMoney .addMoneyCard {
+    max-width: 20rem;
+  }
 }

@@ -1,0 +1,51 @@
+.container .row {
+  background-color: var(--beige-100);
+  padding: var(--spacing-400);
+  border-radius: 15px;
+}
+
+.container .row .createUser {
+  border: solid 1px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.container .row .createUser h5{
+  margin: auto 0;
+    font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.container .row .UserDeheader .col {
+  color: var(--red);
+  font-size: var(--text-preset-3-font-size);
+  line-height: var(--text-preset-3-line-height);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.container .row .details .name {
+  margin: auto 0;
+  color: var(--grey-900);
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
+
+.container .row .details .passWord {
+  color: var(--grey-500);
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-line-height);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+  font-weight: var(--font-weight-regular);
+}
+
+.container .row .details .admin {
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--font-weight-bold);
+}
