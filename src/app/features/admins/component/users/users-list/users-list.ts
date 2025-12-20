@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { Component } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { UsersService } from '../../../../../services/users.service';
@@ -6,7 +7,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
-  imports: [CommonModule, RouterLink],
+  imports: [MatTableModule, CommonModule, RouterLink],
   templateUrl: './users-list.html',
   styleUrls: ['./users-list.css'],
   standalone: true

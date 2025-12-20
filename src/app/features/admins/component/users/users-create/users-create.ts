@@ -1,16 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsersService } from '../../../../../services/users.service';
 
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users-create',
-  standalone: true,
-  imports: [MatTableModule, RouterLink, ReactiveFormsModule, CommonModule],
+  imports: [ RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './users-create.html',
   styleUrl: './users-create.css'
 })
@@ -19,9 +17,12 @@ export class UsersCreate implements OnInit {
   //
   UserForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private serv: UsersService, private toastr: ToastrService) {
-
-  }
+  constructor(
+    private fb: FormBuilder,
+    private serv: UsersService,
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -41,8 +42,8 @@ export class UsersCreate implements OnInit {
 
   submit(UserForm: any) {
     this.serv.post(UserForm.value).subscribe((data: any) => {
-      console.log(data);
-      console.log("create data done succesffuly");
+      this.router.navigateByUrl('admins/ul')
+      this.toastr.success('Saved successfully', 'Done' );
     });
   }
 }

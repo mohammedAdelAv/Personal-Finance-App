@@ -9,7 +9,7 @@ import {
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 
 import { routes } from './app.routes';
@@ -25,7 +25,17 @@ export const appConfig: ApplicationConfig = {
     // required animations providers
     provideAnimations(),
     // Toastr providers
-    provideToastr(),
+    provideToastr({
+      timeOut: 8000,
+      extendedTimeOut: 2000,
+      progressBar: true,
+      closeButton: true,
+      preventDuplicates: true,
+      positionClass: 'toast-top-right',
+      tapToDismiss: false,
+      onActivateTick: true,
+    }),
+    importProvidersFrom(BrowserAnimationsModule)
   ]
 };
 
