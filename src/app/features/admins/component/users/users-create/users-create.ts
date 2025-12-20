@@ -5,6 +5,8 @@ import { MatTableModule } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
 import { UsersService } from '../../../../../services/users.service';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-users-create',
   standalone: true,
@@ -17,7 +19,7 @@ export class UsersCreate implements OnInit {
   //
   UserForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private serv: UsersService) {
+  constructor(private fb: FormBuilder, private serv: UsersService, private toastr: ToastrService) {
 
   }
 
