@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users-create',
-  imports: [ RouterLink, ReactiveFormsModule, CommonModule],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './users-create.html',
   styleUrl: './users-create.css'
 })
@@ -41,9 +41,16 @@ export class UsersCreate implements OnInit {
   }
 
   submit(UserForm: any) {
+    console.log('SUBMIT STARTED');
+
+    setTimeout(() => {
+      console.log('AFTER 2 SECONDS');
+    }, 2000);
+
+    this.toastr.success('TEST', 'TEST');
     this.serv.post(UserForm.value).subscribe((data: any) => {
-      this.router.navigateByUrl('admins/ul')
-      this.toastr.success('Saved successfully', 'Done' );
+      this.toastr.success('Saved successfully', 'Done');
+      this.router.navigateByUrl('admins/ul');
     });
   }
 }

@@ -14,7 +14,7 @@
 
     <hr />
 
-    @if (allUsers && allUsers.length > 0) { @for (au of allUsers; track au.userName; let i = $index)
+    @if (allUsers && allUsers.length > 0) { @for (au of allUsers; track au.id; let i = $index)
     {
     <div class="details d-flex align-items-center">
       <div class="col ps-4">

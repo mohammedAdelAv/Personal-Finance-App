@@ -83,7 +83,7 @@
           @if (UserForm.invalid) {
           <button class="btn btn-danger" disabled>Submit</button>
           } @else {
-          <button class="btn btn-success" (click)="submit(UserForm)">Submit</button>
+          <button class="btn btn-success" type="button" (click)="submit(UserForm)">Submit</button>
           }
         </div>
       </form>
