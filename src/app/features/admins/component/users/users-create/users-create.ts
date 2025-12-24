@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import { UsersService } from '../../../../../services/users.service';
 
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users-create',
@@ -20,7 +19,6 @@ export class UsersCreate implements OnInit {
   constructor(
     private fb: FormBuilder,
     private serv: UsersService,
-    private toastr: ToastrService,
     private router: Router
   ) { }
 
@@ -42,8 +40,10 @@ export class UsersCreate implements OnInit {
 
   submit(UserForm: any) {
     this.serv.post(UserForm.value).subscribe((data: any) => {
-      this.toastr.success('Saved successfully', 'Done');
-      this.router.navigateByUrl('admins/ul');
+      this.router.navigateByUrl('admins/ul', {
+        state: { showToast: true }
+      });
     });
   }
+
 }
