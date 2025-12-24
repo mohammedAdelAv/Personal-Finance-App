@@ -18,7 +18,7 @@ Chart.register(...registerables);
 })
 export class overview implements OnInit, AfterViewInit {
 
-  balance: { current?: number; income?: number; expenses?: number } | null = null;
+  balance: { id?: string; current?: number; income?: number; expenses?: number } | null = null;
   pots: { name?: string; total?: number }[] = [];
   transactions: { avatar?: string; name?: string; date?: Date; amount?: number }[] = [];
   budgets: { category?: string; maximum?: number; theme?: string }[] = [];

@@ -41,13 +41,6 @@ export class UsersCreate implements OnInit {
   }
 
   submit(UserForm: any) {
-    console.log('SUBMIT STARTED');
-
-    setTimeout(() => {
-      console.log('AFTER 2 SECONDS');
-    }, 2000);
-
-    this.toastr.success('TEST', 'TEST');
     this.serv.post(UserForm.value).subscribe((data: any) => {
       this.toastr.success('Saved successfully', 'Done');
       this.router.navigateByUrl('admins/ul');
