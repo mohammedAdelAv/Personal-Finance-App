@@ -1,5 +1,6 @@
 import { Component, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NgxSpinnerComponent } from 'ngx-spinner';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 
 
@@ -7,7 +8,7 @@ import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ToastContainerDirective],
+  imports: [RouterOutlet, ToastContainerDirective, NgxSpinnerComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
