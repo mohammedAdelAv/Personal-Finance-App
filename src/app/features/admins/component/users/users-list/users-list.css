@@ -10,9 +10,9 @@
   border-radius: 8px;
 }
 
-.container .row .createUser h5{
+.container .row .createUser h5 {
   margin: auto 0;
-    font-size: var(--text-preset-2-font-size);
+  font-size: var(--text-preset-2-font-size);
   line-height: var(--text-preset-2-line-height);
   letter-spacing: var(--text-preset-2-letter-spacing);
   font-weight: var(--font-weight-bold);
@@ -48,4 +48,18 @@
   line-height: var(--text-preset-4-line-height);
   letter-spacing: var(--text-preset-4-letter-spacing);
   font-weight: var(--font-weight-bold);
+}
+
+.container .row .details {
+  position: relative;
+}
+
+.container .row .details .deletPot {
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  right: 50px;
+  top: 20px;
+  z-index: 999;
 }

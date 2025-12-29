@@ -12,7 +12,7 @@ import { Users } from '../core/models/users';
 
 export class UsersService {
 
-  private usersUrl = 'http://localhost:3000/users';
+  private usersUrl = 'http://localhost:3001/users';
 
   constructor(private http: HttpClient) { }
 
@@ -25,9 +25,24 @@ export class UsersService {
 
   //----------------------------------------------------------------------------------
 
+  // add data
   post(objForm: Users): Observable<Users> {
     return this.http.post<Users>(this.usersUrl, objForm);
   }
 
+  //----------------------------------------------------------------------------------
 
+  // get data by id
+  getById(id: any): Observable<Users> {
+    return this.http.get<Users>(this.usersUrl + `/${id}`);
+  }
+
+  //----------------------------------------------------------------------------------
+
+  // get data by id
+  delete(id: any): Observable<Users> {
+    return this.http.delete<Users>(this.usersUrl + `/${id}`);
+  }
+
+  //----------------------------------------------------------------------------------
 }

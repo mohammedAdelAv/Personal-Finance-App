@@ -9,13 +9,12 @@
       <div class="col userName ps-4">User Name</div>
       <div class="col passWord text-end">Password</div>
       <div class="col admin text-end">Admin</div>
-      <div class="col delete text-end pe-3">Delete user</div>
+      <div class="col delete text-end pe-3">Action</div>
     </div>
 
     <hr />
 
-    @if (allUsers && allUsers.length > 0) { @for (au of allUsers; track au.id; let i = $index)
-    {
+    @if (allUsers && allUsers.length > 0) { @for (au of allUsers; track au.id; let i = $index) {
     <div class="details d-flex align-items-center">
       <div class="col ps-4">
         <span class="d-flex userName">
@@ -35,7 +34,18 @@
         >
       </div>
       <div class="col text-end pe-3">
-        <button class="btn btn-danger">delete</button>
+        <img
+          class="ellipsis"
+          (click)="toggleMenu(au)"
+          src="./assets/images/icon-ellipsis.svg"
+          alt="icon ellipsis"
+        />
+        @if ( openMenuId === au.id) {
+        <div class="deletPot d-flex flex-column gap-2">
+          <button class="btn btn-danger" (click)="deleteUser(au.id)">delete</button>
+          <button class="btn btn-warning" routerLink="/admins/uu/{{au.id}}">update</button>
+        </div>
+        }
       </div>
     </div>
     @if (i < allUsers.length - 1) {

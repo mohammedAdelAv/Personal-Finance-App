@@ -18,7 +18,7 @@ let routes: Routes = [
       { path: "home", component: Home },
       { path: "uc", component: UsersCreate },
       { path: "ul", component: UsersList },
-      { path: "uu", component: UsersUpdate },
+      { path: "uu/:id", component: UsersUpdate },
 
       { path: "", pathMatch: "full", redirectTo: "home" },
     ],
