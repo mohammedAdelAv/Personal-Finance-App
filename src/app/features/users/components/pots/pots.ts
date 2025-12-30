@@ -4,6 +4,8 @@ import { Component, OnInit } from "@angular/core";
 import { DataService, Balance } from "../../../../services/data.service";
 import { FormsModule } from "@angular/forms";
 import { v4 as uuidv4 } from 'uuid';
+import { balance } from "../../../../core/models/balance";
+import { balanceService } from "../../../../services/balance.service";
 
 @Component({
   selector: "app-pots",
@@ -15,11 +17,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 export class pots implements OnInit {
 
-  // add money var
 
-  isAddMoneyOpen: boolean = false;
-  selectedPotToAddMoney: any = null;
-  addMoneyAmount: number | null = null;
+
+
 
 
 
@@ -77,7 +77,7 @@ export class pots implements OnInit {
 
   // get pots data
   potsData!: any[];
-  constructor(private serv: DataService) { }
+  constructor(private serv: DataService, private balanceService: balanceService) { }
 
   usedColors = new Set<string>();
 
@@ -291,6 +291,7 @@ export class pots implements OnInit {
   // Withdraw -------------------------------------------------------------------------------------------------------------
 
 
+  updatedBalancePayloadWithdraw = null;
   selectedPot: any = null;
   withdrawAmount: number | null = null;
 
@@ -307,6 +308,7 @@ export class pots implements OnInit {
     this.selectedPot = null;
     this.withdrawAmount = 0;
   }
+
 
   // القيمة الجديدة بعد السحب (Live)
   get newAmount() {
@@ -330,6 +332,10 @@ export class pots implements OnInit {
 
   // confirm Withdraw
   confirmWithdraw() {
+
+    const current = Number(this.balance?.current ?? this.currentBalance ?? 0);
+
+
     const amount = Number(this.withdrawAmount);
     if (!amount || amount <= 0) return alert('Enter valid amount');
 
@@ -337,6 +343,13 @@ export class pots implements OnInit {
       alert('Not enough balance!');
       return;
     }
+
+    const updatedBalancePayloadWithdraw: balance = {
+      current: Number((current + amount).toFixed(2)),
+      income: this.balance?.income ?? 0,
+      expenses: this.balance?.expenses ?? 0
+    };
+
     // update new total
     const updatedTotal = this.selectedPot.total - amount;
     const updatedPot = { ...this.selectedPot, total: updatedTotal };
@@ -350,8 +363,18 @@ export class pots implements OnInit {
         const potIndex = this.potsData.findIndex(p => p.id === this.selectedPot.id);
         if (potIndex !== -1) this.potsData[potIndex] = updatedPot;
 
-        // إغلاق البوب أب
-        this.closeWithdraw();
+        this.balanceService.putWithoutId(updatedBalancePayloadWithdraw).subscribe({
+          next: () => {
+            // إغلاق البوب أب
+            this.closeWithdraw();
+            this.withdrawAmount = null;
+          },
+          error: (err) => {
+            console.error('Error updating balance:', err);
+            alert('Failed to update balance. Please try again.');
+          }
+        });
+
       },
       error: err => console.error('Error updating pot:', err)
     });
@@ -359,6 +382,14 @@ export class pots implements OnInit {
   }
 
   // add money -------------------------------------------------------------------------------------------------------------
+
+  // add money var
+
+  isAddMoneyOpen: boolean = false;
+  selectedPotToAddMoney: any = null;
+  addMoneyAmount: number | null = null;
+
+  // balanceData!: balance;
 
   // open AddMoney
   openAddMoney(pot: any) {
@@ -427,8 +458,10 @@ export class pots implements OnInit {
     const updatedPot = { ...this.selectedPotToAddMoney, total: updatedTotal };
 
 
-    const updatedBalancePayload: Partial<Balance> = {
-      current: Number((current - amount).toFixed(2))
+    const updatedBalancePayload: balance = {
+      current: Number((current - amount).toFixed(2)),
+      income: this.balance?.income ?? 0,
+      expenses: this.balance?.expenses ?? 0
     };
     // 1) حدّث الـ pot أولاً
     this.serv.updatePot(this.selectedPotToAddMoney.id, updatedPot).subscribe({
@@ -436,10 +469,8 @@ export class pots implements OnInit {
         // حدّث الواجهة محلياً
         if (potIndex !== -1) this.potsData[potIndex] = updatedPot;
         // 2) ثم حدّث الـ balance على السيرفر
-        this.serv.updateBalance(updatedBalancePayload).subscribe({
+        this.balanceService.putWithoutId(updatedBalancePayload).subscribe({
           next: () => {
-            this.currentBalance = updatedBalancePayload.current ?? this.currentBalance;
-            if (this.balance) this.balance.current = updatedBalancePayload.current ?? this.balance.current;
             // أغلق المودال وننظف الحقول
             this.closeAddMoney();
             this.addMoneyAmount = null;

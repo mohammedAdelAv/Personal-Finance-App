@@ -1,12 +1,9 @@
 {
-  "balance": [
-    {
-      "id": "1",
-      "current": 2000,
-      "income": 3814.25,
-      "expenses": 1700.5
-    }
-  ],
+  "balance": {
+    "current": 1480,
+    "income": 3814.25,
+    "expenses": 1700.5
+  },
   "transactions": [
     {
       "avatar": "./images/avatars/emma-richardson.jpg",
@@ -576,17 +573,10 @@
       "theme": "#7f9161"
     },
     {
-      "id": "c48dc378-bd21-4d9d-8088-8fd5699af328",
-      "name": "wedew",
-      "target": 23435,
-      "total": 0,
-      "theme": "#cab361"
-    },
-    {
       "id": "0d504a7a-7339-44d3-8045-95c3b0695f9c",
       "name": "ewd",
       "target": 23344,
-      "total": 0,
+      "total": 544,
       "theme": "#af81ba"
     }
   ]

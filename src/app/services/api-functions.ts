@@ -33,7 +33,7 @@ export class ApiFunctions<Type> {
 
   //----------------------------------------------------------------------------------
 
-  // get data by id
+  // delete data by id
   delete(id: any): Observable<Type> {
     return this.http.delete<Type>(this.Base_url + `/${id}`);
   }
@@ -45,5 +45,11 @@ export class ApiFunctions<Type> {
     return this.http.put<Type>(this.Base_url + `/${id}`, objForm);
   }
 
+  //----------------------------------------------------------------------------------
+
+  // update data by id
+  putWithoutId(objForm: Type): Observable<Type> {
+    return this.http.put<Type>(this.Base_url, objForm);
+  }
 
 }
