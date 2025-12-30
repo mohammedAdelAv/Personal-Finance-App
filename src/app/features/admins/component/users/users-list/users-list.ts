@@ -1,10 +1,9 @@
 import { MatTableModule } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from "@angular/common";
-import { UsersService } from '../../../../../services/users.service';
 import { Router, RouterLink } from '@angular/router';
-
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../../../../../services/user.service';
 
 @Component({
   selector: 'app-users-list',
@@ -42,7 +41,7 @@ export class UsersList implements OnInit {
 
   // get data from json to allUsers arr
   allUsers!: any[];
-  constructor(private serv: UsersService, private toastr: ToastrService, private router: Router) {
+  constructor(private serv: UserService, private toastr: ToastrService, private router: Router) {
     this.showData();
   }
 

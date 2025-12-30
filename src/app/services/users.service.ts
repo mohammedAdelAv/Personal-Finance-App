@@ -45,4 +45,10 @@ export class UsersService {
   }
 
   //----------------------------------------------------------------------------------
+
+  // update data by id
+  put(objForm: Users, id: any): Observable<Users> {
+    return this.http.put<Users>(this.usersUrl + `/${id}`, objForm);
+  }
+
 }

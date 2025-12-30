@@ -22,5 +22,5 @@ export class App {
     this.toastr.overlayContainer = this.toastContainer;
   }
 
-  protected readonly title = signal('firstng');
+  protected readonly title = signal('Finance');
 }

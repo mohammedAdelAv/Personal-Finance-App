@@ -1,1 +1,98 @@
-<p>users-update works!</p>
+<div class="container pt-5">
+  <div class="row">
+    <div class="createUser d-flex justify-content-between">
+      <h5>Update user :</h5>
+      <a routerLink="/admins/ul" class="btn btn-info">User list</a>
+    </div>
+
+    <div class="cardBody mt-3">
+      <form [formGroup]="UserForm">
+        <div class="formGroup pt-3">
+          <!-- ============= NAME FIELD ============= -->
+          <input
+            type="text"
+            name="Name"
+            id="Name"
+            class="form-control mb-4"
+            formControlName="userName"
+            placeholder="User Name"
+          />
+          @if ( controls['userName'].touched && controls['userName'].invalid) {
+          <div class="alert alert-danger">
+            <div *ngIf="controls['userName'].errors?.['required']">Name is required.</div>
+
+            <div *ngIf="controls['userName'].errors?.['minlength']">
+              Name must be at least
+              {{ controls['userName'].errors?.['minlength'].requiredLength }} characters long.
+            </div>
+
+            <div *ngIf="controls['userName'].errors?.['maxlength']">
+              Name cannot exceed
+              {{ controls['userName'].errors?.['maxlength'].requiredLength }} characters.
+            </div>
+
+            <div *ngIf="controls['userName'].errors?.['pattern']">
+              Name can only contain letters and spaces.
+            </div>
+          </div>
+          }
+
+          <!-- ============= PASSWORD FIELD ============= -->
+          <div class="pass">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              name="Password"
+              id="Password"
+              class="form-control mb-4"
+              placeholder="Password"
+              formControlName="passWord"
+            />
+            <span class="toggle-password" (click)="showPassword = !showPassword">
+              {{ showPassword ? '🙈' : '👁️' }}
+            </span>
+          </div>
+          @if (controls['passWord'].touched && controls['passWord'].invalid) {
+          <div class="alert alert-danger">
+            <div *ngIf="controls['passWord'].errors?.['required']">Password is required.</div>
+
+            <div *ngIf="controls['passWord'].errors?.['minlength']">
+              Password must be at least
+              {{ controls['passWord'].errors?.['minlength'].requiredLength }} characters long.
+            </div>
+
+            <div *ngIf="controls['passWord'].errors?.['maxlength']">
+              Password cannot exceed
+              {{ controls['passWord'].errors?.['maxlength'].requiredLength }} characters.
+            </div>
+
+            <div *ngIf="controls['passWord'].errors?.['pattern']">
+              Password must contain at least one uppercase letter, one lowercase letter, and one
+              number.
+            </div>
+          </div>
+          }
+        </div>
+
+        <!-- ============= SELECT FIELD ============= -->
+
+        <div class="selectGroup d-flex justify-content-between">
+          <h3>Admin?</h3>
+          <select name="isAdmin" id="Admin" formControlName="admin">
+            <option [ngValue]="true">Yes</option>
+            <option [ngValue]="false">No</option>
+          </select>
+        </div>
+
+        <!-- ============= BUTTON ============= -->
+
+        <div class="d-grid pt-3">
+          @if (UserForm.invalid) {
+          <button class="btn btn-danger" disabled>Update</button>
+          } @else {
+          <button class="btn btn-warning" type="button" (click)="submit(UserForm)">Submit</button>
+          }
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
