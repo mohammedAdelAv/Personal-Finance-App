@@ -40,7 +40,7 @@
       <div class="col-lg-8 col-12 right">
         <div class="bills d-flex justify-content-between">
           <form class="d-flex" role="search ">
-            <input class="form-control" placeholder="Search transaction" aria-label="Search" />
+            <input id="form-control" class="form-control" placeholder="Search transaction" aria-label="Search" />
             <img src="./assets/images/icon-search.svg" alt="search" class="iconS" />
           </form>
           <li class="dropdown filter-dropdown">
@@ -78,7 +78,7 @@
           <div class="col amountCol text-end pe-3">Status</div>
         </div>
         <hr />
-        @if (traData && traData.length > 0) { @for (tx of traData; let i = $index; track tx.name ) {
+        @if (traData && traData.length > 0) { @for (tx of traData; let i = $index; track tx.id ) {
         <div class="details d-flex align-items-center">
           <div class="col ps-4">
             <div class="mob">

@@ -19,6 +19,10 @@ Chart.register(...registerables);
 
 export class budgets implements OnInit {
 
+
+  chart!: Chart;
+
+
   totalSpent: number = 0;
   totalBudget: number = 0;
 
@@ -103,36 +107,54 @@ export class budgets implements OnInit {
     });
   }
 
+  renderChart() {
+    if (!this.budgetData || this.budgetData.length === 0) return;
+
+    const canvas = document.getElementById('budgetChart') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    // 🧹 مهم جدًا: امسح الشارت القديم قبل إنشاء واحد جديد
+    if (this.chart) {
+      this.chart.destroy();
+    }
+
+    this.chart = new Chart(canvas, {
+      type: 'doughnut',
+      data: {
+        labels: this.budgetData.map(b => b.category),
+        datasets: [
+          {
+            data: this.budgetData.map(b => b.maximum),
+            backgroundColor: this.budgetData.map(b => b.theme ?? '#ccc'),
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        cutout: '62%',
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+  }
+
+
 
   // doughnut chart by chart.js
   ngAfterViewInit(): void {
     setTimeout(() => {
-      if (this.budgetData.length > 0) {
-        const ctx = document.getElementById("budgetChart") as HTMLCanvasElement;
-
-        new Chart(ctx, {
-          type: "doughnut",
-          data: {
-            labels: this.budgetData.map((b) => b.category),
-            datasets: [
-              {
-                data: this.budgetData.map((b) => b.maximum),
-                backgroundColor: this.budgetData.map((b) => b.theme ?? "#ccc"),
-                borderWidth: 1,
-              },
-            ],
-          },
-          options: {
-            cutout: "62%",
-            plugins: {
-              legend: {
-                display: false
-              },
-            },
-          },
-        });
-      }
+      this.renderChart();
     }, 500);
   }
+
+  ngOnDestroy() {
+    if (this.chart) {
+      this.chart.destroy();
+    }
+  }
+
 
 }

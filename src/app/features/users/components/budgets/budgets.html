@@ -17,7 +17,7 @@
           </div>
           @if (budgetData && budgetData.length > 0) {
           <div class="">
-            @for(b of budgetData; let i = $index; track b.category){
+            @for(b of budgetData; let i = $index; track b.id){
             <div
               class="budget-item ps-3 d-flex justify-content-between"
               [ngStyle]="{ 'border-left': '4px solid' + (b.theme ?? '#ccc') }"
@@ -41,7 +41,7 @@
 
       <div class="col-lg-7 col-12 right">
         @if (budgetData && budgetData.length > 0) { @for(b of budgetData; let i = $index; track
-        b.category){
+        b.id){
         <div class="entertainment mb-4">
           <div class="d-flex">
             <span
@@ -89,7 +89,7 @@
               </a>
             </div>
             @if(transactionsData && transactionsData.length > 0){ @for(tx of
-            transactionsCategory[b.category] | slice : 0 : 3; let j = $index; track tx.name){
+            transactionsCategory[b.category] | slice : 0 : 3; let j = $index; track tx.id){
             <div class="d-flex justify-content-between">
               <span class="d-flex">
                 <img [src]="'assets/' + tx.avatar" alt="{{ tx.avatar }}" class="avatar me-3" />

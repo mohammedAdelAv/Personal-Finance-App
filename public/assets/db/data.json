@@ -271,7 +271,7 @@
       "date": "2024-07-23T09:35:14Z",
       "amount": -49.99,
       "recurring": true,
-      "status": "paid"
+      "status": "unpaid"
     },
     {
       "id": "7",
@@ -429,24 +429,24 @@
       "id": "f457"
     },
     {
-      "id": "8",
       "avatar": "./images/avatars/serenity-spa-and-wellness.jpg",
       "name": "Serenity Spa & Wellness",
       "category": "Personal Care",
-      "date": "2024-07-03T14:00:37Z",
+      "date": "2026-01-15T14:00:37Z",
       "amount": -30,
       "recurring": true,
-      "status": "unpaid"
+      "status": "paid",
+      "id": "8"
     },
     {
-      "id": "9",
       "avatar": "./images/avatars/spark-electric-solutions.jpg",
       "name": "Spark Electric Solutions",
       "category": "Bills",
-      "date": "2024-07-02T09:25:51Z",
+      "date": "2026-07-02T09:25:51Z",
       "amount": -100,
       "recurring": true,
-      "status": "unpaid"
+      "status": "unpaid",
+      "id": "9"
     },
     {
       "avatar": "./images/avatars/swift-ride-share.jpg",
@@ -571,13 +571,6 @@
       "target": 1600,
       "total": 646,
       "theme": "#7f9161"
-    },
-    {
-      "id": "0d504a7a-7339-44d3-8045-95c3b0695f9c",
-      "name": "ewd",
-      "target": 23344,
-      "total": 544,
-      "theme": "#af81ba"
     }
   ]
 }

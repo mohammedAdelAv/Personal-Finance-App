@@ -17,7 +17,7 @@ export interface Balance {
 export class DataService {
   private jsonUrl = './assets/db/data.json';
   private apiUrl = 'http://localhost:3000';
-
+  private tranApiUrl = 'http://localhost:3000/transactions';
 
   constructor(private http: HttpClient) { }
 
@@ -36,7 +36,7 @@ export class DataService {
 
   // Update specific transaction (for Paid button)
   updateTransaction(id: number, updatedData: any): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/${id}`, updatedData);
+    return this.http.patch(`${this.tranApiUrl}/${id}`, updatedData);
   }
 
   // إضافة pot جديد

@@ -18,6 +18,8 @@ Chart.register(...registerables);
 })
 export class overview implements OnInit, AfterViewInit {
 
+  chart!: Chart;
+
   balance: { id?: string; current?: number; income?: number; expenses?: number } | null = null;
   pots: { name?: string; total?: number }[] = [];
   transactions: { avatar?: string; name?: string; date?: Date; amount?: number }[] = [];
@@ -77,32 +79,41 @@ export class overview implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      if (this.budgets.length > 0) {
-        const ctx = document.getElementById("budgetChart") as HTMLCanvasElement;
+      const ctx = document.getElementById("budgetChartOverView") as HTMLCanvasElement;
+      if (!ctx) return;
 
-        new Chart(ctx, {
-          type: "doughnut",
-          data: {
-            labels: this.budgets.map((b) => b.category),
-            datasets: [
-              {
-                data: this.budgets.map((b) => b.maximum),
-                backgroundColor: this.budgets.map((b) => b.theme ?? "#ccc"),
-                borderWidth: 1,
-              },
-            ],
-          },
-          options: {
-            cutout: "65%",
-            plugins: {
-              legend: {
-                display: false
-              },
+      if (this.chart) {
+        this.chart.destroy();
+      }
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: this.budgets.map((b) => b.category),
+          datasets: [
+            {
+              data: this.budgets.map((b) => b.maximum),
+              backgroundColor: this.budgets.map((b) => b.theme ?? "#ccc"),
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          cutout: "62%",
+          plugins: {
+            legend: {
+              display: false
             },
           },
-        });
-      }
+        },
+      });
     }, 500);
   }
 
+
+
+  ngOnDestroy() {
+    if (this.chart) {
+      this.chart.destroy();
+    }
+  }
 }
