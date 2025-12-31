@@ -5,7 +5,7 @@
   min-height: 100vh;
 }
 
-.Pots .container-fluid .head h1 {
+.head h1 {
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
   letter-spacing: var(--text-preset-1-letter-spacing);
@@ -13,7 +13,7 @@
   font-weight: var(--font-weight-bold);
 }
 
-.Pots .container-fluid .head .btn {
+.head .btn {
   background-color: var(--grey-900);
   color: var(--white);
   font-size: var(--text-preset-4-font-size);
@@ -43,14 +43,14 @@
   position: relative;
 }
 
-.Pots .container-fluid .potsDe .colorDot {
+.potsDe .colorDot {
   border-radius: 50%;
   width: 16px;
   height: 16px;
   margin: auto 0;
 }
 
-.Pots .container-fluid .potsDe h4 {
+.potsDe h4 {
   margin-bottom: 0px;
   margin: auto 0;
   padding-left: 1rem;
@@ -61,13 +61,13 @@
   font-weight: var(--font-weight-bold);
 }
 
-.Pots .container-fluid .potsDe .ellipsis {
+.potsDe .ellipsis {
   margin-left: auto;
   cursor: pointer;
 }
 
 /* delet pot */
-.Pots .container-fluid .potsDe .deletPot {
+.potsDe .deletPot {
   position: absolute;
   border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
@@ -77,7 +77,7 @@
   z-index: 999;
 }
 
-.Pots .container-fluid .potsDe .deletPot .btn {
+.potsDe .deletPot .btn {
   color: var(--red);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -86,7 +86,7 @@
   padding: 10px 14px;
 }
 
-.Pots .container-fluid .potsDe .tS p {
+.potsDe .tS p {
   margin-bottom: 0px;
   margin: auto 0;
   color: var(--grey-500);
@@ -96,7 +96,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.Pots .container-fluid .potsDe .tS span {
+.potsDe .tS span {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -104,7 +104,7 @@
   font-weight: var(--font-weight-bold);
 }
 
-.Pots .container-fluid .potsDe .pers {
+.potsDe .pers {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -112,7 +112,7 @@
   font-weight: var(--font-weight-bold);
 }
 
-.Pots .container-fluid .potsDe .targetOf {
+.potsDe .targetOf {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -120,7 +120,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.Pots .container-fluid .potsDe .button button {
+.potsDe .button button {
   all: unset;
   cursor: pointer;
   background-color: var(--beige-100);
@@ -135,7 +135,7 @@
   text-align: center;
 }
 
-.Pots .container-fluid .potsDe .button button:hover {
+.potsDe .button button:hover {
   background-color: var(--white);
   outline: 1px solid var(--beige-500);
 }
@@ -339,7 +339,7 @@ hr {
   width: 100%;
 }
 
-.deleteMsg .deleteCard .deleteHeader h3 {
+.deleteCard .deleteHeader h3 {
   color: var(--grey-900);
   font-size: var(--text-preset-2-font-size);
   line-height: var(--text-preset-2-line-height);
@@ -347,7 +347,7 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.deleteMsg .deleteCard .textMuted {
+.deleteCard .textMuted {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -355,11 +355,11 @@ hr {
   font-weight: var(--font-weight-regular);
 }
 
-.deleteMsg .deleteCard .deleteHeader .colseBtn {
+.deleteCard .deleteHeader .colseBtn {
   all: unset;
 }
 
-.deleteMsg .deleteCard .btns .btnD {
+.deleteCard .btns .btnD {
   padding: 1rem;
   color: var(--white);
   font-size: var(--text-preset-4-font-size);
@@ -371,7 +371,7 @@ hr {
   border: none;
 }
 
-.deleteMsg .deleteCard .btns .btn {
+.deleteCard .btns .btn {
   padding-top: 1rem;
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
@@ -403,7 +403,7 @@ hr {
   width: 100%;
 }
 
-.Withdraw .WithdrawCard .WithdrawHeader h3 {
+.WithdrawCard .WithdrawHeader h3 {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -411,11 +411,11 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.Withdraw .WithdrawCard .WithdrawHeader .colseBtn {
+.WithdrawCard .WithdrawHeader .colseBtn {
   all: unset;
 }
 
-.Withdraw .WithdrawCard .textMuted {
+.WithdrawCard .textMuted {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -423,7 +423,7 @@ hr {
   font-weight: var(--font-weight-regular);
 }
 
-.Withdraw .WithdrawCard .newAmount p {
+.WithdrawCard .newAmount p {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -432,7 +432,7 @@ hr {
   margin: auto 0;
 }
 
-.Withdraw .WithdrawCard .newAmount span {
+.WithdrawCard .newAmount span {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -440,7 +440,7 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.Withdraw .WithdrawCard .formLabel {
+.WithdrawCard .formLabel {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -449,7 +449,7 @@ hr {
   padding-bottom: 0.6rem;
 }
 
-.Withdraw .WithdrawCard .formControl {
+.WithdrawCard .formControl {
   width: 100%;
   border-radius: 8px;
   height: 2.8rem;
@@ -459,13 +459,13 @@ hr {
   cursor: pointer;
 }
 
-.Withdraw .WithdrawCard .formControl:focus {
+.WithdrawCard .formControl:focus {
   outline: none;
   outline: 3px solid var(--grey-300);
   outline-offset: 2px;
 }
 
-.Withdraw .WithdrawCard .de .pers {
+.WithdrawCard .de .pers {
   color: var(--red);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -473,7 +473,7 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.Withdraw .WithdrawCard .de .targetOf {
+.WithdrawCard .de .targetOf {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -503,7 +503,7 @@ hr {
   width: 100%;
 }
 
-.addMoney .addMoneyCard .addMoneyHeader h3 {
+.addMoneyCard .addMoneyHeader h3 {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -511,11 +511,11 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.addMoney .addMoneyCard .addMoneyHeader .colseBtn {
+.addMoneyCard .addMoneyHeader .colseBtn {
   all: unset;
 }
 
-.addMoney .addMoneyCard .textMuted {
+.addMoneyCard .textMuted {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -523,7 +523,7 @@ hr {
   font-weight: var(--font-weight-regular);
 }
 
-.addMoney .addMoneyCard .newAmount p {
+.addMoneyCard .newAmount p {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -532,7 +532,7 @@ hr {
   margin: auto 0;
 }
 
-.addMoney .addMoneyCard .newAmount span {
+.addMoneyCard .newAmount span {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -540,7 +540,7 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.addMoney .addMoneyCard .formLabel {
+.addMoneyCard .formLabel {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -549,7 +549,7 @@ hr {
   padding-bottom: 0.6rem;
 }
 
-.addMoney .addMoneyCard .formControl {
+.addMoneyCard .formControl {
   width: 100%;
   border-radius: 8px;
   height: 2.8rem;
@@ -559,13 +559,13 @@ hr {
   cursor: pointer;
 }
 
-.addMoney .addMoneyCard .formControl:focus {
+.addMoneyCard .formControl:focus {
   outline: none;
   outline: 3px solid var(--grey-300);
   outline-offset: 2px;
 }
 
-.addMoney .addMoneyCard .de .pers {
+.addMoneyCard .de .pers {
   color: var(--red);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -573,7 +573,7 @@ hr {
   font-weight: var(--font-weight-bold);
 }
 
-.addMoney .addMoneyCard .de .targetOf {
+.addMoneyCard .de .targetOf {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
