@@ -13,18 +13,18 @@
   font-weight: var(--font-weight-bold);
 }
 
-.row .col-md-4 {
+.container-fluid .row .col-md-4 {
   width: 21rem;
   height: 7.4375rem;
   border-radius: 20px;
   padding: var(--spacing-300);
 }
 
-.row .currentBalance {
+.container-fluid .row .currentBalance {
   background-color: var(--grey-900);
 }
 
-.row .currentBalance h4 {
+.container-fluid .row .currentBalance h4 {
   color: var(--white);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -32,7 +32,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.row .currentBalance .p {
+.container-fluid .row .currentBalance .p {
   color: var(--white);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -40,11 +40,11 @@
   font-weight: var(--font-weight-bold);
 }
 
-.row .share {
+.container-fluid .row .share {
   background-color: var(--white);
 }
 
-.row .share h4 {
+.container-fluid .row .share h4 {
   color: var(--grey-900);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -52,7 +52,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.row .share p {
+.container-fluid .row .share p {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -81,7 +81,7 @@
   cursor: pointer;
 }
 
-.row .col-md-7 h4,
+.pots h4,
 .Transactions h4,
 .RecurringBills h4,
 .Budgets h4 {
@@ -199,7 +199,7 @@
   position: relative;
 }
 
-.row p {
+.Budgets .row p {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -207,7 +207,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.row span {
+.Budgets .row span {
   color: var(--grey-900);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -215,11 +215,11 @@
   font-weight: var(--font-weight-bold);
 }
 
-.row .budget-item {
+.Budgets .row .budget-item {
   margin: auto;
 }
 
-.canvas .chartCenter {
+.Budgets .canvas .chartCenter {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -227,7 +227,7 @@
   text-align: center;
 }
 
-.canvas .chartCenter h4 {
+.Budgets .canvas .chartCenter h4 {
   color: var(--grey-900);
   font-size: var(--text-preset-1-font-size);
   line-height: var(--text-preset-1-line-height);
@@ -235,7 +235,7 @@
   font-weight: var(--font-weight-bold);
 }
 
-.canvas .chartCenter p {
+.Budgets .canvas .chartCenter p {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -268,13 +268,13 @@
   margin-bottom: 0px;
 }
 
-.details .avatar {
+.Transactions .details .avatar {
   border-radius: 100%;
   width: 40px;
   height: 40px;
 }
 
-.details .name {
+.Transactions .details .name {
   color: var(--grey-900);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -283,7 +283,7 @@
   margin: auto;
 }
 
-.details .date {
+.Transactions .details .date {
   color: var(--grey-500);
   font-size: var(--text-preset-5-font-size);
   line-height: var(--text-preset-5-line-height);
@@ -291,7 +291,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.details .amount {
+.Transactions .details .amount {
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
   letter-spacing: var(--text-preset-4-letter-spacing);
@@ -310,7 +310,7 @@
   background-color: var(--white);
 }
 
-.row .d-flex {
+.RecurringBills .row .d-flex {
   width: 27rem;
   background-color: var(--beige-100);
   margin-bottom: 12px;
@@ -332,7 +332,7 @@
   margin: auto 0;
 }
 
-.row p {
+.RecurringBills .row p {
   color: var(--grey-500);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -340,7 +340,7 @@
   font-weight: var(--font-weight-regular);
 }
 
-.row span {
+.RecurringBills .row span {
   color: var(--grey-900);
   font-size: var(--text-preset-4-font-size);
   line-height: var(--text-preset-4-line-height);
@@ -348,19 +348,19 @@
   font-weight: var(--font-weight-bold);
 }
 
-.row .d {
+.RecurringBills .row .d {
   border-left: 4px solid var(--green);
 }
 
-.row .g {
+.RecurringBills .row .g {
   border-left: 4px solid var(--cyan);
 }
 
-.row .h {
+.RecurringBills .row .h {
   border-left: 4px solid var(--yellow);
 }
 
-.row .p {
+.RecurringBills .row .p {
   border-left: 4px solid var(--red);
 }
 
