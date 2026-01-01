@@ -1,13 +1,6 @@
 {
-  "builds": [
-    {
-      "src": "angular.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/firstng/browser"
-      }
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/firstng/browser",
   "routes": [
     {
       "src": "/(.*)",
