@@ -46,6 +46,7 @@
             placeholder="Password"
             formControlName="passWord"
           />
+          
           @if (controls['passWord'].touched && controls['passWord'].invalid) {
           <div class="alert alert-danger">
             <div *ngIf="controls['passWord'].errors?.['required']">Password is required.</div>

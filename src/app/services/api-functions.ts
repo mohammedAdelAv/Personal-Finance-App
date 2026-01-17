@@ -52,4 +52,12 @@ export class ApiFunctions<Type> {
     return this.http.put<Type>(this.Base_url, objForm);
   }
 
+  //----------------------------------------------------------------------------------
+
+  auth(){
+    if(!localStorage.getItem("admin")){
+      location.replace("http://localhost:4200/admins/login");
+    }
+  }
+
 }

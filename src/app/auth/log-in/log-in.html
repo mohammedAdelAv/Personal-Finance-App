@@ -1,54 +1,89 @@
-<div class="container">
-  <div class="imgLogIn">
-    <img
-      src="../../../../public/assets/images/illustration-authentication.svg"
-      alt="authentication"
-    />
-  </div>
-  <div class="formLogIn">
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <!-- Email -->
-      <div class="mb-3">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          class="form-control"
-          formControlName="email"
-        />
-        <div
-          class="text-danger"
-          *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
-        >
-          Email is required and must be valid
+<div class="login">
+  <div class="container-fluid">
+    <div class="loginContainer d-flex align-items-center">
+      <div class="imgLogIn">
+        <img src="/assets/images/Sidebar.svg" alt="authentication" />
+      </div>
+      <div class="formLogIn">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm">
+          <!-- ============= NAME FIELD ============= -->
+          <div class="mb-2">
+            <label for="email">User Name</label>
+            <input id="Name" type="text" class="form-control" formControlName="userName"/>
+            @if ( controls['userName'].touched && controls['userName'].invalid) {
+            <div class="alert alert-danger">
+              <div *ngIf="controls['userName'].errors?.['required']">Name is required.</div>
+
+              <div *ngIf="controls['userName'].errors?.['minlength']">
+                Name must be at least
+                {{ controls['userName'].errors?.['minlength'].requiredLength }} characters long.
+              </div>
+
+              <div *ngIf="controls['userName'].errors?.['maxlength']">
+                Name cannot exceed
+                {{ controls['userName'].errors?.['maxlength'].requiredLength }} characters.
+              </div>
+
+              <div *ngIf="controls['userName'].errors?.['pattern']">
+                Name can only contain letters and spaces.
+              </div>
+            </div>
+            }
+          </div>
+          <!-- ============= PASSWORD FIELD ============= -->
+          <div class="pass">
+            <div class="mb-2">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                [type]="showPassword ? 'text' : 'password'"
+                class="form-control"
+                id="Password"
+                formControlName="passWord"
+
+              />
+              <span class="toggle-password" (click)="showPassword = !showPassword">
+                <img
+                  [src]="
+                    showPassword
+                      ? 'assets/images/icon-show-password.svg'
+                      : 'assets/images/icon-hide-password.svg'
+                  "
+                  alt="toggle password"
+                />
+              </span>
+            </div>
+          </div>
+          @if (controls['passWord'].touched && controls['passWord'].invalid) {
+          <div class="alert alert-danger">
+            <div *ngIf="controls['passWord'].errors?.['required']">Password is required.</div>
+
+            <div *ngIf="controls['passWord'].errors?.['minlength']">
+              Password must be at least
+              {{ controls['passWord'].errors?.['minlength'].requiredLength }} characters long.
+            </div>
+
+            <div *ngIf="controls['passWord'].errors?.['maxlength']">
+              Password cannot exceed
+              {{ controls['passWord'].errors?.['maxlength'].requiredLength }} characters.
+            </div>
+
+            <div *ngIf="controls['passWord'].errors?.['pattern']">
+              Password must contain at least one uppercase letter, one lowercase letter, and one
+              number.
+            </div>
+          </div>
+          }
+
+          <button  type="submit" class="btn btn-dark w-100" [disabled]="loginForm.invalid">
+            Login
+          </button>
+        </form>
+        <div class="text">
+          <p>Need to create an account? <span>Sign Up</span></p>
         </div>
       </div>
-
-      <!-- Password -->
-      <div class="mb-3">
-        <label for="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          class="form-control"
-          formControlName="password"
-        />
-        <div
-          class="text-danger"
-          *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-        >
-          Password is required (min 6 chars)
-        </div>
-      </div>
-
-      <button
-        type="submit"
-        class="btn btn-primary w-100"
-        [disabled]="loginForm.invalid"
-      >
-        Login
-      </button>
-    </form>
+    </div>
   </div>
 </div>

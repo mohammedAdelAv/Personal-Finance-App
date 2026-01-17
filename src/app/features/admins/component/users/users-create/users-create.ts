@@ -20,10 +20,11 @@ export class UsersCreate implements OnInit {
     private fb: FormBuilder,
     private serv: UsersService,
     private router: Router
-  ) { }
+  ) { this.serv.auth(); }
 
   ngOnInit(): void {
     this.createForm();
+
   }
 
   createForm() {

@@ -51,4 +51,11 @@ export class UsersService {
     return this.http.put<Users>(this.usersUrl + `/${id}`, objForm);
   }
 
+  //----------------------------------------------------------------------------------
+
+  auth() {
+    if (!localStorage.getItem('admin')) {
+      location.replace("http://localhost:4200/admins/login");
+    }
+  }
 }

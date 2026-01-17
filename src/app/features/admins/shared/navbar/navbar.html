@@ -3,6 +3,7 @@
     <a class="navbar-brand" routerLink="/admins/home">
       <img src="./assets/images/Logo.svg" alt="logo" class="d-inline-block align-text-top pe-5" />
     </a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -14,15 +15,23 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @if (isAuth) {
         <li class="nav-item">
           <a class="nav-link active" routerLink="/admins/ul">Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" routerLink="/admins/uc">User Create</a>
         </li>
+        }
       </ul>
+      @if (isAuth) {
+      <div class="d-flex">
+        <button (click)="logout()" class="btn btn-outline-danger">log out</button>
+      </div>
+      }
     </div>
   </div>
 </nav>

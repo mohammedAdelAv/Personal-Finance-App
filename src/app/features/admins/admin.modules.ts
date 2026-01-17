@@ -7,6 +7,7 @@ import { UsersCreate } from "./component/users/users-create/users-create";
 import { UsersList } from "./component/users/users-list/users-list";
 import { UsersUpdate } from "./component/users/users-update/users-update";
 import { Home } from "./home/home";
+import { Login } from "./component/users/login/login";
 
 
 let routes: Routes = [
@@ -20,6 +21,7 @@ let routes: Routes = [
       { path: "ul", component: UsersList },
       { path: "uu/:id", component: UsersUpdate },
 
+      { path: "login", component: Login },
       { path: "", pathMatch: "full", redirectTo: "home" },
     ],
   },

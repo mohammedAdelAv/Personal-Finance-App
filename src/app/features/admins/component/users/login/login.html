@@ -1,0 +1,53 @@
+<div class="login">
+  <div class="container-fluid">
+    <div class="loginContainer d-flex align-items-center">
+      <div class="imgLogIn">
+        <img src="/assets/images/Sidebar.svg" alt="authentication" />
+      </div>
+      <div class="formLogIn">
+        <h2>Login</h2>
+        <form>
+          <!-- ============= NAME FIELD ============= -->
+          <div class="mb-2">
+            <label for="username">User Name</label>
+            <input
+              id="username"
+              name="AdminUsername"
+              type="text"
+              class="form-control"
+              [(ngModel)]="AdminUsername"
+            />
+          </div>
+          <!-- ============= PASSWORD FIELD ============= -->
+          <div class="pass">
+            <div class="mb-2">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="AdminPassword"
+                [type]="showPassword ? 'text' : 'password'"
+                class="form-control"
+                [(ngModel)]="AdminPassword"
+              />
+              <span class="toggle-password" (click)="showPassword = !showPassword">
+                <img
+                  [src]="
+                    showPassword
+                      ? 'assets/images/icon-show-password.svg'
+                      : 'assets/images/icon-hide-password.svg'
+                  "
+                  alt="toggle password"
+                />
+              </span>
+            </div>
+          </div>
+
+          <button (click)="login()" class="btn btn-dark w-100">Login</button>
+        </form>
+        <div class="text">
+          <p>Need to create an account? <span>Sign Up</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

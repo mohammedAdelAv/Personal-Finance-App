@@ -43,6 +43,7 @@ export class UsersList implements OnInit {
   allUsers!: any[];
   constructor(private serv: UserService, private toastr: ToastrService, private router: Router) {
     this.showData();
+    this.serv.auth();
   }
 
   // show users data
