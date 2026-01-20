@@ -31,7 +31,7 @@ export class transactions implements OnInit {
   itemsPerPage = 10;
 
   //add ActivatedRoute to constructor to can read query params
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) {this.dataService.authDataUser(); }
 
 
 

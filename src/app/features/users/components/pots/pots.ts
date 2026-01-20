@@ -77,7 +77,7 @@ export class pots implements OnInit {
 
   // get pots data
   potsData!: any[];
-  constructor(private serv: DataService, private balanceService: balanceService) { }
+  constructor(private serv: DataService, private balanceService: balanceService) { this.serv.authDataUser();}
 
   usedColors = new Set<string>();
 

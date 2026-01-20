@@ -25,7 +25,7 @@ export class overview implements OnInit, AfterViewInit {
   transactions: { avatar?: string; name?: string; date?: Date; amount?: number }[] = [];
   budgets: { category?: string; maximum?: number; theme?: string }[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) { this.dataService.authDataUser(); }
 
   // total saved pots
   totalSaved: number = 0;

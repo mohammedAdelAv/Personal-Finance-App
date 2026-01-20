@@ -43,6 +43,11 @@
   border-bottom: 4px solid var(--green);
 }
 
+.sidebar .container-fluid .nav .nav-item .btn {
+  margin-top: 10px;
+  /* width: 90%; */
+}
+
 /* End Sidebar */
 
 @media (max-width: 479px) {
@@ -63,5 +68,9 @@
   .sidebar .container-fluid .nav .nav-link:focus,
   .sidebar .container-fluid .nav .nav-link:hover {
     width: 3.5rem;
+  }
+
+  .sidebar .container-fluid .nav .nav-item .btn {
+    margin-top: 0;
   }
 }

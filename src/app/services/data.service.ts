@@ -65,4 +65,10 @@ export class DataService {
     // ملاحظة: مع json-server قد تحتاج PATCH على /balance/1 أو PUT حسب شكل الـ DB لديك.
   }
 
+  authDataUser() {
+    if (!localStorage.getItem('user')) {
+      location.replace("http://localhost:4200/auth");
+    }
+  }
+
 }

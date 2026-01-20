@@ -1,7 +1,7 @@
 .login {
   background-color: var(--beige-100);
   min-height: 100vh;
-   padding: var(--spacing-250);
+  padding: var(--spacing-250);
 }
 
 .loginContainer .imgLogIn img {
@@ -53,6 +53,7 @@
   color: var(--grey-900);
   font-weight: var(--font-weight-bold);
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .loginContainer .formLogIn .pass {

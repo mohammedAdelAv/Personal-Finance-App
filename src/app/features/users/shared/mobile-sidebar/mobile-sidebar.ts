@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-mobile-sidebar',
@@ -8,5 +9,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './mobile-sidebar.css'
 })
 export class MobileSidebar {
+constructor(private router: Router, private toaster: ToastrService) { }
 
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('auth');
+    this.toaster.info('Logged out successfully', 'Info');
+  }
 }

@@ -39,7 +39,7 @@ export class recurringBills implements OnInit {
   }>();
 
   traData!: any[];
-  constructor(private serv: DataService) { }
+  constructor(private serv: DataService) { this.serv.authDataUser();}
 
   ngOnInit(): void {
     this.serv.getAll().subscribe({

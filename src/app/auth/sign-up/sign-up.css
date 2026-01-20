@@ -1,0 +1,77 @@
+.login {
+  background-color: var(--beige-100);
+  min-height: 100vh;
+  padding: var(--spacing-250);
+}
+
+.loginContainer .imgLogIn img {
+  max-width: 35rem;
+  max-height: 75rem;
+  max-height: 100vh;
+  object-fit: contain;
+}
+
+.loginContainer .formLogIn {
+  width: 35rem;
+  height: auto;
+  margin: 0rem auto;
+  background-color: var(--white);
+  padding: var(--spacing-400);
+  border-radius: 8px;
+}
+
+.loginContainer .formLogIn h2 {
+  font-size: var(--text-preset-1-font-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+  padding-bottom: var(--spacing-400);
+}
+
+.loginContainer .formLogIn .btn {
+  margin: var(--spacing-400) 0;
+  color: var(--white);
+  background-color: black;
+  padding: 10px;
+}
+
+.loginContainer .formLogIn .text {
+  display: flex;
+  justify-content: center;
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  color: var(--grey-500);
+  font-weight: var(--font-weight-regular);
+}
+
+.loginContainer .formLogIn .text span {
+  font-size: var(--text-preset-4-font-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  color: var(--grey-900);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.loginContainer .formLogIn .pass {
+  position: relative;
+}
+
+.loginContainer .formLogIn .pass .toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 65%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+@media (max-width: 900px) {
+  .loginContainer .imgLogIn img {
+    display: none;
+  }
+}

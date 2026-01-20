@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { RouterLink } from '@angular/router';
 
 export class Header {
 
+  constructor(private router: Router, private toaster: ToastrService) { }
   isMenuMinimized = false;
 
   // Minimize Sidebar
@@ -19,4 +21,9 @@ export class Header {
     document.body.classList.toggle('collapsed', this.isMenuMinimized);
   }
 
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('auth');
+    this.toaster.info('Logged out successfully', 'Info');
+  }
 }

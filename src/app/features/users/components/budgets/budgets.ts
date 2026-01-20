@@ -20,6 +20,7 @@ Chart.register(...registerables);
 export class budgets implements OnInit {
 
 
+
   chart!: Chart;
 
 
@@ -59,7 +60,7 @@ export class budgets implements OnInit {
   // get budget & transactions data
   budgetData!: any[];
   transactionsData!: any[];
-  constructor(private serv: DataService) { }
+  constructor(private serv: DataService) { this.serv.authDataUser(); }
   ngOnInit(): void {
     this.serv.getAll().subscribe({
       next: (data) => {

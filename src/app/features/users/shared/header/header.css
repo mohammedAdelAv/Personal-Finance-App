@@ -36,8 +36,13 @@
 }
 
 .sidebar .container-fluid .min {
-  margin-top: 17rem;
+  margin-top: 1rem;
   cursor: pointer;
+}
+
+.sidebar .container-fluid .nav .nav-item .btn {
+  width: 80%;
+  margin-top: 10rem;
 }
 
 /* End Sidebar */
@@ -59,5 +64,3 @@
 }
 
 /* End Minimize Sidebar */
-
-
